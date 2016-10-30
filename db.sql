@@ -5,12 +5,12 @@ DROP TABLE IF EXISTS user;
 
 CREATE TABLE user
 	(
-	userid int AUTO_INCREMENT, 
+	id int AUTO_INCREMENT, 
 	username varchar(255),
 	hashedpassword varchar(255),
 	usertypeid int,
 	activeuserflag int,
-	PRIMARY KEY (userid)
+	PRIMARY KEY (id)
 	);
 
 CREATE TABLE permissiongroup
@@ -29,7 +29,10 @@ CREATE TABLE permission
 
 CREATE TABLE files
 	(
+	groupid int,
 	path varchar(100),
-	userid int REFERENCES user(userid),
-	date datetime
+	userid int REFERENCES user(id),
+	date datetime,
+	private BOOLEAN,
+	PRIMARY KEY (groupid)
 	);
