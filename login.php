@@ -1,6 +1,6 @@
 <?php
 
-	session_start(); // session starts with the help of this function
+//	session_start(); // session starts with the help of this function
 
 ?>
 
@@ -19,17 +19,17 @@
     <title>RADs Login</title>
 
    
-    <link href="../bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     
-    <link href="../bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
     
-    <link href="../bootstrap/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!--<link href="../bootstrap/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">-->
 
     
-    <link href="app.css" rel="stylesheet">
+    <!--<link href="app.css" rel="stylesheet">-->
 
     
-    <script src="../bootstrap/assets/js/ie-emulation-modes-warning.js"></script>
+    <!--<script src="../bootstrap/assets/js/ie-emulation-modes-warning.js"></script>-->
 		<script>
 
 
@@ -66,11 +66,8 @@
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../bootstrap/assets/js/docs.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!--<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </body>
 </html>
