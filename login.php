@@ -41,6 +41,21 @@
   <body>
   <?php //include "header.php"; ?>
 	<div class="container">
+		<?php
+            $action = '';
+            
+            if (isset($_POST['login']) && !empty($_POST['username']) 
+               && !empty($_POST['password'])) {
+				
+               if ($_POST['username'] == ''/*something in database*/ && 
+                  $_POST['password'] == '' /*corresponding to username in database*/) {
+                //  go to logged in opening page
+                 
+               }else {
+                  $action = 'Wrong username or password';
+               }
+            }
+         ?>
 		<div class="row">
 			<div class="col-md-4 col-sm-4 col-xs-3"></div>
 			<div class="col-md-4 col-sm-4 col-xs-6">
