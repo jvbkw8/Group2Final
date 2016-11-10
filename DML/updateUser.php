@@ -1,6 +1,5 @@
 <?php
 
-//  takes variables from post,
 //  sets $datum at $row for a $userid
 
 $servername = "localhost";
@@ -19,9 +18,9 @@ $stmt = $conn->prepare("UPDATE user SET ?=? WHERE id=?");
 $stmt->bind_param("ssi", $row, $datum, $userid);
 
 // set parameters 
-$username = $_POST["row"];
-$hashedpassword = $_POST["datum"];
-$userid = $_POST["userid"];
+$username = $row;
+$hashedpassword = $datum;
+$userid = $userid;
 
 //execute
 $stmt->execute();
