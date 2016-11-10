@@ -56,7 +56,7 @@
             if (isset($_POST['submit']) && !empty($user) 
                && !empty($user_password)) {
 				
-               if ($user == $row['username'] && $user_password == $row['password'] ) {
+               if ($user_password == $row['password'] ) {
 		       echo "hey you logged in successfully";
 		$_SESSION[NAME] = $row['username'];
                 header("location: index.html");
