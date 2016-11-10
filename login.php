@@ -39,16 +39,23 @@
   </head>
 
   <body>
-  <?php //include "header.php"; ?>
+  <?php //include "header.php"; 
+        include "connection.php";
+  ?>
 	<div class="container">
 		<?php
+            $user = $_POST['username'];
+            $userPaswword = $_POST['password'];
             $action = '';
-            
-            if (isset($_POST['login']) && !empty($_POST['username']) 
-               && !empty($_POST['password'])) {
+            $link = mysqli_connect("$servername", "$username", "$password", "$dbname") or die ("Connection Error " . mysqli_error($link));
+            $sql = "SELECT username, passsword FROM user WHERE username = '$user' AND password= '$password';";
+            $result = mysqli_query($link, $sql);
+            $row = mysql_fetch_array($query);
+
+            if (isset($_POST['login']) && !empty($user) 
+               && !empty($userPaswword)) {
 				
-               if ($_POST['username'] == ''/*something in database*/ && 
-                  $_POST['password'] == '' /*corresponding to username in database*/) {
+               if ($user == $row['username'] && $userPaswword == $row['password'] ) {
                 header("location: index.html");
                  
                }else {
@@ -69,7 +76,6 @@
 					</div>
 					<div class="row form-group">
 							<input class=" btn btn-info" type="submit" name="submit" value="Login"/>
-							<a href="index.html" class=" btn btn-info" type="submit" name="login" value="login">Home</a>
 					</div>
 				</form>
 
