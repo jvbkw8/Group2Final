@@ -49,7 +49,7 @@
 				
                if ($_POST['username'] == ''/*something in database*/ && 
                   $_POST['password'] == '' /*corresponding to username in database*/) {
-                //  go to logged in opening page
+                header("location: index.php");
                  
                }else {
                   $action = 'Wrong username or password';
