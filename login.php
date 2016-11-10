@@ -35,7 +35,7 @@
 			</form>
 
 		</div>
-	  <div id="error" class="alert alert-danger col-md-4 col-sm-4 col-xs-6"><?php echo $_GET['error'];?></div>
+	  <div id="error" class="alert alert-danger col-md-4 col-sm-4 col-xs-6 row"><?php echo $_GET['error'];?></div>
 	  </div>
 	<!-- Bootstrap core JavaScript
     ================================================== -->
