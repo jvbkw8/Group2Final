@@ -22,7 +22,7 @@
 		<div class="col-md-4 col-sm-4 col-xs-3"></div>
 		<div class="col-md-4 col-sm-4 col-xs-6">
 			<h2>Login</h2>
-			<form onsubmit="verifyLogin();" action="">
+			<form onsubmit="verifyLogin();return false;" action="">
 				<div class="row form-group">
 						<input id="user" class='form-control' type="text" name="username" placeholder="username">
 				</div>
