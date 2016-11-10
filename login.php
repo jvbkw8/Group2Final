@@ -22,12 +22,12 @@
 		<div class="col-md-4 col-sm-4 col-xs-3"></div>
 		<div class="col-md-4 col-sm-4 col-xs-6">
 			<h2>Login</h2>
-			<form onsubmit="event.preventDefault(); return verifyLogin();">
+			<form action="loginVerify.php" method="POST">
 				<div class="row form-group">
 						<input id="user" class='form-control' type="text" name="username" placeholder="username">
 				</div>
 				<div class="row form-group">
-						<input id="password" class='form-control' type="password" name="password" placeholder="password">
+						<input id="password" class='form-control' type="password" name="userpassword" placeholder="password">
 				</div>
 				<div class="row form-group">
 						<input class=" btn btn-info" type="submit" name="submit" value="Login"/>
@@ -47,27 +47,27 @@
     <!--<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>-->
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	  <script>
-		  function verifyLogin(){
-			console.log("attempting to verify login");
-			var username = $('#user').val();
-			var userpassword = $('#password').val();
-			$.ajax({
-				url: "loginVerify.php",
-				data: {username:username, userpassword:userpassword},
-				method: "POST",
-				success: function(html){
-					console.log(html);
-					if(html.success == true){
-						window.location.replace("index.html");	
-					} else {
-						$('#error').html("Invalid username or password.");
-					}
-				},
-				error: function(html){
-					console.log("error: " + html);
-				}
-			});	  
-		  }
+// 		  function verifyLogin(){
+// 			console.log("attempting to verify login");
+// 			var username = $('#user').val();
+// 			var userpassword = $('#password').val();
+// 			$.ajax({
+// 				url: "loginVerify.php",
+// 				data: {username:username, userpassword:userpassword},
+// 				method: "POST",
+// 				success: function(html){
+// 					console.log(html);
+// 					if(html.success == true){
+// 						window.location.replace("index.html");	
+// 					} else {
+// 						$('#error').html("Invalid username or password.");
+// 					}
+// 				},
+// 				error: function(html){
+// 					console.log("error: " + html);
+// 				}
+// 			});	  
+// 		  }
 	  </script>
   </body>
 </html>
