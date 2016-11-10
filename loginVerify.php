@@ -1,5 +1,5 @@
 <?php
-	$failure = "{success:false}";
+	$failure = "{success:false";
 	$success = "{success:true}";
         $user_name = $_POST['username'];
         $user_password = $_POST['userpassword'];
@@ -15,7 +15,7 @@
 	$sql = "SELECT username FROM db.user WHERE username = '$user_name' AND password= '$user_password';";
 	$result = $conn->query($sql);
 	$row = $result->fetch_assoc();
-	//$failure .= ', username: "'.$username.'", password: "'.$userpassword
+	$failure .= ', username: "'.$user_name.'", password: "'.$user_password.'", sql: "'.$sql.'"}';
 	if ($user_name == $row['username'] ) {
 		$_SESSION[NAME] = $row['username'];
 		echo $success;
