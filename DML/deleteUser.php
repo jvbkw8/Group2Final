@@ -15,9 +15,6 @@ if ($conn->connect_error) {
 $stmt = $conn->prepare("DELETE FROM user WHERE id=?");
 $stmt->bind_param("i", $userid);
 
-// set parameters 
-$userid = $_POST["userid"];
-
 //execute
 $stmt->execute();
 
