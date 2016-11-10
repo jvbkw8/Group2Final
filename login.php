@@ -24,10 +24,10 @@
 			<h2>Login</h2>
 			<form onsubmit="verifyLogin();" method="POST">
 				<div class="row form-group">
-						<input class='form-control' type="text" name="username" placeholder="username">
+						<input id="user" class='form-control' type="text" name="username" placeholder="username">
 				</div>
 				<div class="row form-group">
-						<input class='form-control' type="password" name="password" placeholder="password">
+						<input id="password" class='form-control' type="password" name="password" placeholder="password">
 				</div>
 				<div class="row form-group">
 						<input class=" btn btn-info" type="submit" name="submit" value="Login"/>
@@ -46,8 +46,12 @@
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	  <script>
 		  function verifyLogin(){
+			var username = $('#user').val();
+			var userpassword = $('#password').val();
 			$.ajax(
 				url: "verifyLogin.php",
+				data: {username:username, userpassword:userpassword},
+				method: "POST",
 				success: function(html){
 					if(html.success == true){
 						window.location.replace("index.php");	
