@@ -56,6 +56,7 @@
                && !empty($userPaswword)) {
 				
                if ($user == $row['username'] && $userPaswword == $row['password'] ) {
+		       echo "hey you logged in successfully";
 		$_SESSION[NAME] = $row['username'];
                 header("location: index.html");
                  
