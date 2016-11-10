@@ -49,7 +49,7 @@
 			console.log("attempting to verify login");
 			var username = $('#user').val();
 			var userpassword = $('#password').val();
-			$.ajax(
+			$.ajax({
 				url: "verifyLogin.php",
 				data: {username:username, userpassword:userpassword},
 				method: "POST",
@@ -64,7 +64,7 @@
 				error: function(html){
 					console.log("error: " + html);
 				}
-			);	  
+			});	  
 		  }
 	  </script>
   </body>
