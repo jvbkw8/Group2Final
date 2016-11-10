@@ -45,18 +45,18 @@
 	<div class="container">
 		<?php
             $user = $_POST['username'];
-            $password = $_POST['password'];
+            $user_password = $_POST['password'];
             $action = '';
             $link = mysqli_connect("$servername", "$username", "$password", "$dbname") or die ("Connection Error " . mysqli_error($link));
             //TODO:  hash password!
-		$sql = "SELECT username FROM user WHERE username = '$user' AND password= '$password';";
+		$sql = "SELECT username FROM user WHERE username = '$user' AND password= '$user_password';";
             $result = mysqli_query($link, $sql);
             $row = mysql_fetch_array($query);
 
             if (isset($_POST['submit']) && !empty($user) 
-               && !empty($password)) {
+               && !empty($user_password)) {
 				
-               if ($user == $row['username'] && $password == $row['password'] ) {
+               if ($user == $row['username'] && $user_password == $row['password'] ) {
 		       echo "hey you logged in successfully";
 		$_SESSION[NAME] = $row['username'];
                 header("location: index.html");
