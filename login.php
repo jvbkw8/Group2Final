@@ -22,7 +22,7 @@
 		<div class="col-md-4 col-sm-4 col-xs-3"></div>
 		<div class="col-md-4 col-sm-4 col-xs-6">
 			<h2>Login</h2>
-			<form onsubmit="verifyLogin();" method="POST">
+			<form onsubmit="verifyLogin();">
 				<div class="row form-group">
 						<input id="user" class='form-control' type="text" name="username" placeholder="username">
 				</div>
@@ -46,6 +46,7 @@
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	  <script>
 		  function verifyLogin(){
+			console.log("attempting to verify login");
 			var username = $('#user').val();
 			var userpassword = $('#password').val();
 			$.ajax(
