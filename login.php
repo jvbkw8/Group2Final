@@ -37,6 +37,8 @@
 		</div>
 
 	</div>
+	  <div id="error">
+	  </div>
 		
 	<!-- Bootstrap core JavaScript
     ================================================== -->
@@ -58,7 +60,7 @@
 					if(html.success == true){
 						window.location.replace("index.html");	
 					} else {
-						alert(html);
+						$('#error').html("Invalid username or password.");
 					}
 				},
 				error: function(html){
