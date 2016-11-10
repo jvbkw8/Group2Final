@@ -3,7 +3,7 @@
 	$success = "{success:true}";
         $user_name = $_POST['username'];
         $user_password = $_POST['userpassword'];
-	if(!$username or !$userpassword){
+	if(!$user_name or !$user_password){
 		echo $failure;
 		exit();
 	}
