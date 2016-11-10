@@ -45,7 +45,7 @@
 	<div class="container">
 		<?php
             $user = $_POST['username'];
-            $userPaswword = $_POST['password'];
+            $password = $_POST['password'];
             $action = '';
             $link = mysqli_connect("$servername", "$username", "$password", "$dbname") or die ("Connection Error " . mysqli_error($link));
             //TODO:  hash password!
@@ -54,9 +54,9 @@
             $row = mysql_fetch_array($query);
 
             if (isset($_POST['submit']) && !empty($user) 
-               && !empty($userPaswword)) {
+               && !empty($password)) {
 				
-               if ($user == $row['username'] && $userPaswword == $row['password'] ) {
+               if ($user == $row['username'] && $password == $row['password'] ) {
 		       echo "hey you logged in successfully";
 		$_SESSION[NAME] = $row['username'];
                 header("location: index.html");
