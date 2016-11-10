@@ -5,6 +5,7 @@
         $userpassword = $_POST['userpassword'];
 	if(!$username or !$userpassword){
 		echo $failure;
+		exit();
 	}
 	session_start(); // session starts with the help of this function
         include "connection.php";
@@ -17,7 +18,9 @@
 	if ($username == $row['username'] ) {
 		$_SESSION[NAME] = $row['username'];
 		echo $success;
+		exit();
 	}else {
 		echo $failure;
+		exit();
 	}
 ?>
