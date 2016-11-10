@@ -4,7 +4,7 @@
         $user_name = $_POST['username'];
         $user_password = $_POST['userpassword'];
 	if(!$user_name or !$user_password){
-		echo $failure;
+		echo $failure."}";
 		exit();
 	}
 	session_start(); // session starts with the help of this function
