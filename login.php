@@ -51,7 +51,7 @@
             //TODO:  hash password!
 		$sql = "SELECT username FROM user WHERE username = '$user' AND password= '$user_password';";
             $result = mysqli_query($link, $sql);
-            $row = mysql_fetch_array($query);
+            $row = mysqli_fetch_assoc($result);
 
             if (isset($_POST['submit']) && !empty($user) 
                && !empty($user_password)) {
