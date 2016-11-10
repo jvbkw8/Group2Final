@@ -1,5 +1,5 @@
 <?php
-	$failure = "{success:false}";
+	$failure = "{success:false";
 	$success = "{success:true}";
         $username = $_POST['username'];
         $userpassword = $_POST['userpassword'];
@@ -12,9 +12,10 @@
 	$conn = new mysqli($servername, $username, $password);
 	//$link = mysqli_connect("$servername", "$username", "$password", "$dbname") or die ("Connection Error " . mysqli_error($link));
 	//TODO:  hash password!
-	$sql = "SELECT username FROM db.user WHERE username = '$user' AND password= '$user_password';";
+	$sql = "SELECT username FROM db.user WHERE username = '$user' AND password= '$userpassword';";
 	$result = $conn->query($sql);
 	$row = $result->fetch_assoc();
+	//$failure .= ', username: "'.$username.'", password: "'.$userpassword
 	if ($username == $row['username'] ) {
 		$_SESSION[NAME] = $row['username'];
 		echo $success;
