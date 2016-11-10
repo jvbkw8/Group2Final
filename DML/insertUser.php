@@ -15,11 +15,6 @@ if ($conn->connect_error) {
 $stmt = $conn->prepare("INSERT INTO user (username, hashedpassword, usertypeid, activeuserflag) VALUES (?, ?, ?, ?)");
 $stmt->bind_param("sss", $username, $hashedpassword, $usertypeid, $activeuserflag);
 
-// set parameters 
-$username = $username;
-$hashedpassword = $hashedpassword;
-$usertypeid = $usertypeid;
-$activeuserflag = $activeuserflag;
 
 //execute
 $stmt->execute();
