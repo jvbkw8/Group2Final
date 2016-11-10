@@ -1,6 +1,6 @@
 <?php
 
-//	session_start(); // session starts with the help of this function
+	session_start(); // session starts with the help of this function
 
 ?>
 
@@ -56,6 +56,7 @@
                && !empty($userPaswword)) {
 				
                if ($user == $row['username'] && $userPaswword == $row['password'] ) {
+		$_SESSION[NAME] = $row['username'];
                 header("location: index.html");
                  
                }else {
