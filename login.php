@@ -54,7 +54,7 @@
 				method: "POST",
 				success: function(html){
 					if(html.success == true){
-						window.location.replace("index.php");	
+						window.location.replace("index.html");	
 					} else {
 						alert(html);
 					}
