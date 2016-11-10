@@ -50,7 +50,7 @@
 			var username = $('#user').val();
 			var userpassword = $('#password').val();
 			$.ajax({
-				url: "verifyLogin.php",
+				url: "loginVerify.php",
 				data: {username:username, userpassword:userpassword},
 				method: "POST",
 				success: function(html){
