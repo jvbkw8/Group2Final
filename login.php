@@ -69,6 +69,7 @@
 					</div>
 					<div class="row form-group">
 							<input class=" btn btn-info" type="submit" name="submit" value="Login"/>
+							<a href="index.html" class=" btn btn-info" type="submit" name="login" value="login">Home</a>
 					</div>
 				</form>
 
