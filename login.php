@@ -52,7 +52,7 @@
             $result = mysqli_query($link, $sql);
             $row = mysql_fetch_array($query);
 
-            if (isset($_POST['login']) && !empty($user) 
+            if (isset($_POST['submit']) && !empty($user) 
                && !empty($userPaswword)) {
 				
                if ($user == $row['username'] && $userPaswword == $row['password'] ) {
