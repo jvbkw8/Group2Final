@@ -17,11 +17,6 @@ if ($conn->connect_error) {
 $stmt = $conn->prepare("UPDATE user SET ?=? WHERE id=?");
 $stmt->bind_param("ssi", $row, $datum, $userid);
 
-// set parameters 
-$username = $row;
-$hashedpassword = $datum;
-$userid = $userid;
-
 //execute
 $stmt->execute();
 
