@@ -4,7 +4,8 @@
         $user_name = $_POST['username'];
         $user_password = $_POST['userpassword'];
 	if(!$user_name or !$user_password){
-		echo $failure."}";
+		header("Location: login.php?error=Invalid username or password");
+		//echo $failure."}";
 		exit();
 	}
 	session_start(); // session starts with the help of this function
@@ -18,10 +19,12 @@
 	$failure .= ', username: "'.$user_name.'", password: "'.$user_password.'", sql: "'.$sql.'"}';
 	if ($user_name == $row['username'] ) {
 		$_SESSION[NAME] = $row['username'];
-		echo $success;
+		header("Location: index.html");
+		//echo $success;
 		exit();
-	}else {
-		echo $failure;
+	} else {
+		header("Location: login.php?error=Invalid username or password");
+		//echo $failure;
 		exit();
 	}
 ?>
