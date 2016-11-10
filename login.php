@@ -48,7 +48,8 @@
             $userPaswword = $_POST['password'];
             $action = '';
             $link = mysqli_connect("$servername", "$username", "$password", "$dbname") or die ("Connection Error " . mysqli_error($link));
-            $sql = "SELECT username, passsword FROM user WHERE username = '$user' AND password= '$password';";
+            //TODO:  hash password!
+		$sql = "SELECT username FROM user WHERE username = '$user' AND password= '$password';";
             $result = mysqli_query($link, $sql);
             $row = mysql_fetch_array($query);
 
