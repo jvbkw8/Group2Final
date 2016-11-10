@@ -37,7 +37,7 @@
 		</div>
 
 	</div>
-	  <div id="error">
+	  <div id="error"><?php=$error?>
 	  </div>
 		
 	<!-- Bootstrap core JavaScript
