@@ -1,5 +1,5 @@
 <?php
-	$failure = "{success:false";
+	$failure = "{success:false}";
 	$success = "{success:true}";
         $username = $_POST['username'];
         $userpassword = $_POST['userpassword'];
