@@ -16,10 +16,10 @@ $stmt = $conn->prepare("INSERT INTO user (username, hashedpassword, usertypeid, 
 $stmt->bind_param("sss", $username, $hashedpassword, $usertypeid, $activeuserflag);
 
 // set parameters 
-$username = $_POST["username"];
-$hashedpassword = $_POST["hashedpasswor"];
-$usertypeid = $_POST["usertypeid"];
-$activeuserflag = $_POST["activeuserflag"];
+$username = $username;
+$hashedpassword = $hashedpassword;
+$usertypeid = $usertypeid;
+$activeuserflag = $activeuserflag;
 
 //execute
 $stmt->execute();
