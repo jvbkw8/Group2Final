@@ -54,6 +54,7 @@
 				data: {username:username, userpassword:userpassword},
 				method: "POST",
 				success: function(html){
+					console.log(html);
 					if(html.success == true){
 						window.location.replace("index.html");	
 					} else {
