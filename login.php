@@ -37,11 +37,7 @@
 		</div>
 
 	</div>
-	  <div id="error" class="alert alert-danger">
-		  <?php
-		  echo $_GET['error'];
-		  ?>
-	  </div>
+	  <div id="error" class="alert alert-danger"><?php echo $_GET['error'];?></div>
 		
 	<!-- Bootstrap core JavaScript
     ================================================== -->
