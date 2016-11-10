@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
 <body>
 	<div class="form-group row">
 		<label for=example-first-input" class="col-xs-2 col-form-label">First Name:</label>
@@ -16,12 +17,7 @@
  		 <div class="col-xs-10">
 			 <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
  	 </div>	
-	
-
-
-
-
-<input type="radio" name="user" value="student">Student<br>
+	<input type="radio" name="user" value="student">Student<br>
 		<input type="radio" name="user" value="researcher">Researcher<br>
 		<input type="radio" name="user" value="datascientist">Data Scientist<br>
 		Date: 
