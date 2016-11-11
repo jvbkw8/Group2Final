@@ -24,7 +24,7 @@ include "security.php";
   <ul class="nav nav-pills nav-justified">
     <li><a href="index.html">Home</a></li>
     <li class="active"><a href="upload.php">Upload</a></li>
-    <li><a href="#">Search Manifests</a></li>
+    <li><a href="search.php">Search Manifests</a></li>
     <li><a href="account.php">Account</a></li>
     <li><a href="logout.php">Logout</a></li>
   </ul>
