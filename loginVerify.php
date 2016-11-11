@@ -23,7 +23,7 @@
 // 	echo "connected to db<br>";
 	//$link = mysqli_connect("$servername", "$username", "$password", "$dbname") or die ("Connection Error " . mysqli_error($link));
 	//TODO:  hash password!
-	$sql = "SELECT username FROM db.user WHERE username = '$user_name' and password = '$user_password';";
+	$sql = "SELECT username, hashedpassword FROM db.user WHERE username = '$user_name';";
 	//$sql = "SELECT username FROM user WHERE username = ? AND password= ?;";
 // 	$row = $dbconn->select($sql, array($user_name, $user_password));
 // 	if(count($errors = $dbconn->getErrors()) > 0){
@@ -35,7 +35,8 @@
 // 	}
 	$result = $conn->query($sql);
 	$row = $result->fetch_assoc();
-	if ($user_name == $row['username'] ) {
+	//if ($user_name == $row['username'] ) {
+	if(password_verify($user_password, $row['hashedpassword']){
 		$_SESSION[NAME] = $user_name;
 		//echo "success<br>";
 		header("Location: index.html");
