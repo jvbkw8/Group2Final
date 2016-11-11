@@ -12,7 +12,7 @@
     }
     include "connection.php";
     $conn = new mysqli($servername, $username, $password);
-    $usernamecheck = "select * from user where username = $user_name";
+    $usernamecheck = "select * from user where username = '$user_name'";
     $result = $conn->query($sql);
     if($result->num_rows != 0){
         header("Location: signup.php?error=Username already exists");
