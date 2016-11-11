@@ -16,5 +16,5 @@
     if($conn->affected_rows != 1){
       header("Location: signup.php?error=Information not stored");
     }
-    header("Location: login.php");
+    //header("Location: login.php");
 ?>
