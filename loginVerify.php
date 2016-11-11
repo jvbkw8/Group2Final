@@ -8,9 +8,12 @@
 	}
 	session_start(); // session starts with the help of this function
         //include "connection.php";
-	$conn = new mysqli($servername, $username, $password);
+	//$conn = new mysqli($servername, $username, $password);
+	echo "session started";
 	require_once "DBConn.php";
+	echo "dbconn included";
 	$dbconn = new DBConn();
+	echo "dbconn created";
 	if($dbconn->connectToDatabase()){
 		echo "connected to db<br>";
 		//$link = mysqli_connect("$servername", "$username", "$password", "$dbname") or die ("Connection Error " . mysqli_error($link));
