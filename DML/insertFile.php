@@ -15,4 +15,6 @@ $stmt->bind_param("sss", $username, $hashedpassword, $usertypeid, $activeuserfla
 $stmt->execute();
 $stmt->close();
 $conn->close();
+
+//filesystem operatinos still need to be dealt with
 ?>
