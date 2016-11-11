@@ -38,7 +38,7 @@ class DBConn{
 	function update($query, $newValues = array(), $whereValues = array())
 	{	//echo "update function parameters passed in<br>newValues: ".print_r($newValues, true)."<br>whereValues: ".print_r($whereValues, true)."</pre>";
 		$this->numRows = 0;
-    $this->errors = array();
+                $this->errors = array();
 		if(!is_array($newValues))
 		{
 			$newValues = (array)$newValues;
@@ -110,7 +110,7 @@ class DBConn{
 	function insert($query, $values = array())
 	{
 		$this->numRows = 0;
-    $this->errors = array();
+                $this->errors = array();
 		if(!is_array($values))
 		{
 			$values = (array)$values;
@@ -158,7 +158,7 @@ class DBConn{
 	function select($query, $values = array())
 	{
 		$this->numRows = 0;
-    $this->errors = array();
+                $this->errors = array();
 		if(!is_array($values))
 		{
 			$values = (array)$values;
@@ -212,7 +212,7 @@ class DBConn{
 	function delete($query, $values = array())
 	{
 		$this->numRows = 0;
-    $this->errors = array();
+                $this->errors = array();
 		if(!is_array($values))
 		{
 			$values = (array)$values;
