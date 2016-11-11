@@ -15,6 +15,13 @@ if ($conn->connect_error) {
 $stmt = $conn->prepare("INSERT INTO user (username, hashedpassword, usertypeid, activeuserflag) VALUES (?, ?, ?, ?)");
 $stmt->bind_param("sss", $username, $hashedpassword, $usertypeid, $activeuserflag);
 
+//execute
+$stmt->execute();
+
+////set permission////
+// prepare and bind
+$stmt = $conn->prepare("INSERT INTO permissiongroup (permissionid) VALUES (?)");
+$stmt->bind_param("i", $permissionid);
 
 //execute
 $stmt->execute();
