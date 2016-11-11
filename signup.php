@@ -21,7 +21,7 @@
 	<div class="row">
 		<div class="col-md-4 col-sm-4 col-xs-3"></div>
 		<div class="col-md-4 col-sm-4 col-xs-6">
-			<h2>Login</h2>
+			<h2>Sign Up</h2>
 			<form action="signupVerify.php" method="POST">
 				<div class="row form-group">
 						<input id="user" class='form-control' type="text" name="username" placeholder="username">
@@ -41,7 +41,7 @@
 	  </div>
 	  <div class="row">
 		  <div class="col-md-4 col-sm-4 col-xs-3"></div>
-		  <div id="error" class="alert alert-danger col-md-4 col-sm-4 col-xs-6"></div>
+		  <div id="error" class="alert alert-danger col-md-4 col-sm-4 col-xs-6" style="display:none"></div>
 	  </div>
 	<!-- Bootstrap core JavaScript
     ================================================== -->
@@ -52,7 +52,7 @@
   </body>
 	<script>
 		$(document).ready(function(){
-			if($("#error").html() == ""){
+			if($("#error").html() != ""){
 				$("#error").toggle();
 			}
 		});
