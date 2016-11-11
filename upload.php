@@ -1,23 +1,40 @@
+<?php
+include "security.php";
+?>
 <!DOCTYPE html>
 <html>
 <head>
- 	<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
-<title>Upload Form</title>
+
+<title>Upload Manifest</title>
 </head>
+
+
 <body>
+
+<div class="container">
+  <h2>Upload Manifest</h2>
+  <br>
+  <ul class="nav nav-pills nav-justified">
+    <li><a href="index.html">Home</a></li>
+    <li class="active"><a href="upload.php">Upload</a></li>
+    <li><a href="search.php">Search Manifests</a></li>
+    <li><a href="account.php">Account</a></li>
+    <li><a href="logout.php">Logout</a></li>
+  </ul>
+</div>
+
 <div class="container">
 		<div class="row">
 			<div class="col-md-12 col-sm-10 col-xs-310"></div>
 			<div class="col-md-8 col-sm-10 col-xs-10">
-				<h2>Upload Form</h2>
+				<h2></h2>
 				<form action="<?=$_SERVER['PHP_SELF']?>" method="POST">
 					<div class="form-group row">
 						<label for="example-first-input" class="col-xs-2 col-form-label">First Name:</label>

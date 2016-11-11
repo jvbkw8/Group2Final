@@ -20,6 +20,16 @@ $stmt->bind_param("ssi", $row, $datum, $userid);
 //execute
 $stmt->execute();
 
+
+////update permission////
+// prepare and bind
+$stmt = $conn->prepare("UPDATE permissiongroup SET permissionid=usertypeid");
+$stmt->bind_param("i", $permissionid);
+//execute
+$stmt->execute();
+
+
+
 $stmt->close();
 $conn->close();
 ?>

@@ -1,3 +1,6 @@
+<?php
+include "security.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,20 +15,19 @@
 <body>
 
 <div class="container">
-  <h2>Welcome to RADs</h2>
-  <p>Research Analysis and Database for Scientists</p>
+  <h2>Account information</h2>
+  <br>
   <ul class="nav nav-pills nav-justified">
-    <li class="active"><a href="index.html">Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="upload.php">Upload</a></li>
     <li><a href="search.php">Search Manifests</a></li>
-    <li><a href="account.php">Account</a></li>
+    <li class="active"><a href="#">Account</a></li>
     <li><a href="logout.php">Logout</a></li>
   </ul>
   <br>
-  <p> The goal of this application is to facilitate the research of computational social scientists and data scientists alike by serving as a repository for datasets and metadata following the Open Community Data eXchange (OCDX) specification.</p>
-  <p>
-  View the OCDX specification on their <a href="https://github.com/OCDX"> Github page.</a>
-  </p>
+  <p> Firstname: </p>
+  <p> Lastname: </p>
+  <p> username: <?php echo $_SESSION[NAME];?></p>
 </div>
 
 </body>
