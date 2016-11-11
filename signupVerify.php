@@ -27,5 +27,7 @@
       header("Location: signup.php?error=Information not stored");
         exit();
     }
-    //header("Location: login.php");
+    session_start();
+    $_SESSION[NAME] = $user_name;
+    header("Location: index.html");
 ?>
