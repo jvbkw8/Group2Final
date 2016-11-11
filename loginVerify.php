@@ -10,6 +10,11 @@
         //include "connection.php";
 	//$conn = new mysqli($servername, $username, $password);
 	//echo "session started";
+	if(class_exists('PDO')){
+		echo "pdo exists";
+	} else {
+		echo "pdo does not exist";
+	}
 	require_once "DBConn.php";
 	echo "dbconn included";
 	$dbconn = new DBConn();
