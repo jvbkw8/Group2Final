@@ -16,10 +16,10 @@
   <br>
   <ul class="nav nav-pills nav-justified">
     <li><a href="index.html">Home</a></li>
-    <li><a href="upload.html">Upload</a></li>
+    <li><a href="upload.php">Upload</a></li>
     <li><a href="#">Search Manifests</a></li>
     <li class="active"><a href="#">Account</a></li>
-    <li><a href="#">Logout</a></li>
+    <li><a href="logout.php">Logout</a></li>
   </ul>
   <br>
   <p> Firstname: </p>
