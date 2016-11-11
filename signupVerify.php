@@ -13,15 +13,12 @@
     include "connection.php";
     $conn = new mysqli($servername, $username, $password);
     $usernamecheck = "select * from db.user where username = '$user_name';";
-    echo $usernamecheck;
+    //echo $usernamecheck;
     $result = $conn->query($usernamecheck);
     if($result->num_rows != 0){
         header("Location: signup.php?error=Username already exists");
         exit();
     }
-    while($row = $result->fetch_assoc()){
-        echo $row[username];
-    }exit();
     $hashedPassword = password_hash($user_password, PASSWORD_DEFAULT);
     $sql = "INSERT into db.user (username, hashedpassword) values ($user_name, $hashedPassword);";
     //echo $sql;exit();
