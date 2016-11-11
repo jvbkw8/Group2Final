@@ -11,6 +11,7 @@
 	require_once "DBConn.php";
 	$dbconn = new DBConn();
 	if($dbconn->connectToDatabase()){
+		echo "connected to db<br>";
 		//$link = mysqli_connect("$servername", "$username", "$password", "$dbname") or die ("Connection Error " . mysqli_error($link));
 		//TODO:  hash password!
 		$sql = "SELECT username FROM user WHERE username = ? AND password= ?;";
@@ -19,14 +20,18 @@
 			foreach($errors as $error){
 				echo $error."<br>";
 			}
+		} else {
+			echo "no errors after select statement<br>";
 		}
 	// 	$result = $conn->query($sql);
 	// 	$row = $result->fetch_assoc();
 		if ($user_name == $rows['username'] ) {
 			$_SESSION[NAME] = $user_name;
-			header("Location: index.html");
+			echo "success<br>";
+			//header("Location: index.html");
 			exit();
 		} else {
+			echo "no user found, or password is incorrect<br>";
 			header("Location: login.php?error=Invalid username or password");
 			exit();
 		}
