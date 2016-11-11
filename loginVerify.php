@@ -1,4 +1,5 @@
 <?php
+	error_reporting(-1);
         $user_name = $_POST['username'];
         $user_password = $_POST['userpassword'];
 	if(!$user_name or !$user_password){
@@ -7,10 +8,18 @@
 	}
 	session_start(); // session starts with the help of this function
         //include "connection.php";
-	$conn = new mysqli($servername, $username, $password);
+	//$conn = new mysqli($servername, $username, $password);
+	//echo "session started";
+	if(class_exists('PDO')){
+		echo "pdo exists";
+	} else {
+		echo "pdo does not exist";
+	}
 	require_once "DBConn.php";
+	echo "dbconn included";
 	$dbconn = new DBConn();
-	if($dbconn->connectToDatabase()){
+	echo "dbconn created";
+	//if($dbconn->connectToDatabase()){
 		echo "connected to db<br>";
 		//$link = mysqli_connect("$servername", "$username", "$password", "$dbname") or die ("Connection Error " . mysqli_error($link));
 		//TODO:  hash password!
@@ -35,8 +44,8 @@
 			header("Location: login.php?error=Invalid username or password");
 			exit();
 		}
-	} else { //bad connection
+	//} else { //bad connection
 		header("Location: login.php?error=Could not connect.  Try again later.");
 		exit();
-	}
+	//}
 ?>
