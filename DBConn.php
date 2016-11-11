@@ -6,7 +6,7 @@ class DBConn{
 	
 	function __construct()
 	{
-		$this->connectToDatabase();
+		return $this->connectToDatabase();
 	}
 
 	function connectToDatabase()
