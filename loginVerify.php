@@ -36,7 +36,7 @@
 	$result = $conn->query($sql);
 	$row = $result->fetch_assoc();
 	//if ($user_name == $row['username'] ) {
-	if(password_verify($user_password, $row['hashedpassword']){
+	if(password_verify($user_password, $row['hashedpassword'])){
 		$_SESSION[NAME] = $user_name;
 		//echo "success<br>";
 		header("Location: index.html");
