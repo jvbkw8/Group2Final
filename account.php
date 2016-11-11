@@ -12,8 +12,8 @@
 <body>
 
 <div class="container">
-  <h2>Welcome to RADs</h2>
-  <p>Research Analysis and Database for Scientists</p>
+  <h2>Account information</h2>
+  <br>
   <ul class="nav nav-pills nav-justified">
     <li><a href="index.html">Home</a></li>
     <li><a href="upload.html">Upload</a></li>
@@ -22,9 +22,9 @@
     <li><a href="#">Logout</a></li>
   </ul>
   <br>
-  <h1> Firstname: </h1>
-  <h1> Lastname: </h1>
-  <h1> username: </h1>
+  <p> Firstname: </p>
+  <p> Lastname: </p>
+  <p> username: </p>
 </div>
 
 </body>
