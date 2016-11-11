@@ -1,3 +1,6 @@
+<?php
+include "security.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +27,7 @@
   <br>
   <p> Firstname: </p>
   <p> Lastname: </p>
-  <p> username: </p>
+  <p> username: <?php echo $_SESSION[NAME];?></p>
 </div>
 
 </body>
