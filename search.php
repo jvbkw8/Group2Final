@@ -12,14 +12,14 @@ include "security.php";
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
 
-<title>Upload Manifest</title>
+<title>Search Manifests</title>
 </head>
 
 
 <body>
 
 <div class="container">
-  <h2>Upload Manifest</h2>
+  <h2>Search Manifests</h2>
   <br>
   <ul class="nav nav-pills nav-justified">
     <li><a href="index.html">Home</a></li>
@@ -35,57 +35,31 @@ include "security.php";
 			<div class="col-md-12 col-sm-10 col-xs-310"></div>
 			<div class="col-md-8 col-sm-10 col-xs-10">
 				<h2></h2>
-				<form action="<?=$_SERVER['PHP_SELF']?>" method="POST">
+				<form action="<?=$_SERVER['PHP_SELF']?>" method="GET">
 					<div class="form-group row">
-						<label for="example-first-input" class="col-xs-2 col-form-label">First Name:</label>
+					  <label for="example-first-input" class="col-xs-2 col-form-label">By filename:</label>
+					  <div class="col-xs-10">
+					  <input class="form-control" type="text" placeholder="" id="filename">
+					  <br>
+					  </div>
+					</div>
+					<div class="form-group row">
+						<label for="example-last-input" class="col-xs-2 col-form-label">By Username: </label>
 						<div class="col-xs-10">
-							<input class="form-control" type="text" placeholder="First Name" id="firstname">
+							<input class="form-control" type="text" placeholder="" id="byname">
 							<br>
 					</div>
 					</div>
-					<div class="form-group row">
-						<label for="example-last-input" class="col-xs-2 col-form-label">Last Name:</label>
-						<div class="col-xs-10">
-							<input class="form-control" type="text" placeholder="Last Name" id="lastname">
-							<br>
-					</div>
-					</div>
-					<div class="form-group row">
-  						<label for="example-date-input" class="col-xs-2 col-form-label">Date</label>
- 						<div class="col-xs-10">
-							 <input class="form-control" type="date" value="2016-01-01" id="example-date-input">
-							 <br>
- 					 </div>	
- 					 </div>
- 					 <div class="form-group row">
-						<label for="example-user-input" class="col-xs-2 col-form-label">User Type:</label>
- 					 		<input type="radio" name="user" value="student">Student
-							<input type="radio" name="user" value="researcher">Researcher
- 					 		<input type="radio" name="user" value="Data Scientist">Data Scientist<br>
-					</div>
-					<form method="post" enctype="multipart/form-data">
-            <input type="file" name="my_file[]" multiple>
-        </form>
-        <?php
-            if (isset($_FILES['my_file'])) {
-                $myFile = $_FILES['my_file'];
-                $fileCount = count($myFile["name"]);
-                for ($i = 0; $i < $fileCount; $i++) {
-                    ?>
-                        
-                    <?php
-                }
-            }
-        ?><br>
+					<br>
 					<div class="row form-group">
-							<a href="index.html" class=" btn btn-info" type="submit" name="login" value="login">Submit</a>
+					  <a href="searchResult.php" class=" btn btn-info" type="submit" name="" value="login">Search</a>
 					</div>
 				</form>
 		</div>
 			</div>
 </div>
-		</div>
-</div>	</div> </div>
+		
+
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
  	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
