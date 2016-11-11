@@ -1,5 +1,5 @@
 <?php
-	error_reporting(-1);
+	//error_reporting(-1);
         $user_name = $_POST['username'];
         $user_password = $_POST['userpassword'];
 	if(!$user_name or !$user_password){
