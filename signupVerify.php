@@ -14,7 +14,7 @@
     $conn = new mysqli($servername, $username, $password);
     $hashedPassword = password_hash($user_password);
     $sql = "INSERT into (username, hashedpassword) values ($user_name, $hashedPassword);";
-    header("Location: signup.php?error=$sql");exit();
+    echo $sql";exit();
     $conn->query($sql) or {header("Location: signup.php?error=Connection error");exit();}
     if($conn->affected_rows != 1){
       header("Location: signup.php?error=Information not stored");
