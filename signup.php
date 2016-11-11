@@ -34,6 +34,7 @@
           </div>
 				<div class="row form-group">
 						<input class=" btn btn-info" type="submit" name="submit" value="Sign Up"/>
+					<a class="btn btn-info" href="login.php">Login</a>
 				</div>
 			</form>
 		</div>
