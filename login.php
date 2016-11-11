@@ -38,7 +38,7 @@
 	  </div>
 	  <div class="row">
 		  <div class="col-md-4 col-sm-4 col-xs-3"></div>
-		  <div id="error" class="alert alert-danger col-md-4 col-sm-4 col-xs-6"><?php echo $_GET['error'];?></div>
+		  <div id="error" class="alert alert-danger col-md-4 col-sm-4 col-xs-6" style="display:none"><?php echo $_GET['error'];?></div>
 	  </div>
 	<!-- Bootstrap core JavaScript
     ================================================== -->
@@ -49,7 +49,7 @@
   </body>
 	<script>
 		$(document).ready(function(){
-			if($("#error").html() == ""){
+			if($("#error").html() != ""){
 				$("#error").toggle();
 			}
 		});
