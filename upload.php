@@ -26,7 +26,7 @@ include "security.php";
     <li class="active"><a href="upload.html">Upload</a></li>
     <li><a href="#">Search Manifests</a></li>
     <li><a href="account.php">Account</a></li>
-    <li><a href="#">Logout</a></li>
+    <li><a href="logout.php">Logout</a></li>
   </ul>
 </div>
 
