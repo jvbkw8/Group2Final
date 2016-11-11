@@ -12,7 +12,7 @@
     }
     include "connection.php";
     $conn = new mysqli($servername, $username, $password);
-    $hashedPassword = password_hash($user_password);
+    $hashedPassword = password_hash($user_password, PASSWORD_DEFAULT);
     $sql = "INSERT into (username, hashedpassword) values ($user_name, $hashedPassword);";
     echo $sql;exit();
     $conn->query($sql);
