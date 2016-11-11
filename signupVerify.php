@@ -12,7 +12,7 @@
     }
     include "connection.php";
     $conn = new mysqli($servername, $username, $password);
-    $usernamecheck = "select * from user where username = '$user_name'";
+    $usernamecheck = "select * from db.user where username = '$user_name';";
     echo $usernamecheck;
     $result = $conn->query($usernamecheck);
     if($result->num_rows != 0){
@@ -23,7 +23,7 @@
         echo $row[username];
     }exit();
     $hashedPassword = password_hash($user_password, PASSWORD_DEFAULT);
-    $sql = "INSERT into (username, hashedpassword) values ($user_name, $hashedPassword);";
+    $sql = "INSERT into db.user (username, hashedpassword) values ($user_name, $hashedPassword);";
     //echo $sql;exit();
     $conn->query($sql);
     if($conn->affected_rows != 1){
