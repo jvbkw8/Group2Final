@@ -12,9 +12,15 @@
     }
     include "connection.php";
     $conn = new mysqli($servername, $username, $password);
+    $usernamecheck = "select * from user where username = $user_name";
+    $result = $conn->query($sql);
+    if($result->num_rows != 0){
+        header("Location: signup.php?error=Username already exists");
+        exit();
+    }
     $hashedPassword = password_hash($user_password, PASSWORD_DEFAULT);
     $sql = "INSERT into (username, hashedpassword) values ($user_name, $hashedPassword);";
-    echo $sql;exit();
+    //echo $sql;exit();
     $conn->query($sql);
     if($conn->affected_rows != 1){
       header("Location: signup.php?error=Information not stored");
