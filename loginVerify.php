@@ -9,12 +9,12 @@
 	session_start(); // session starts with the help of this function
         //include "connection.php";
 	//$conn = new mysqli($servername, $username, $password);
-	echo "session started";
+	//echo "session started";
 	require_once "DBConn.php";
 	echo "dbconn included";
 	$dbconn = new DBConn();
 	echo "dbconn created";
-	if($dbconn->connectToDatabase()){
+	//if($dbconn->connectToDatabase()){
 		echo "connected to db<br>";
 		//$link = mysqli_connect("$servername", "$username", "$password", "$dbname") or die ("Connection Error " . mysqli_error($link));
 		//TODO:  hash password!
@@ -39,8 +39,8 @@
 			header("Location: login.php?error=Invalid username or password");
 			exit();
 		}
-	} else { //bad connection
+	//} else { //bad connection
 		header("Location: login.php?error=Could not connect.  Try again later.");
 		exit();
-	}
+	//}
 ?>
