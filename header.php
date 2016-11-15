@@ -1,5 +1,5 @@
 <?php
-echo $_SERVER['PHP_SELF'];
+//echo $_SERVER['PHP_SELF'];
 switch($_SERVER['PHP_SELF']){
   case "/Group2Final/index.php":
       $index_active = "active";
