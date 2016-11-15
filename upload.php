@@ -37,16 +37,9 @@ include "security.php";
 				<h2></h2>
 				<form action="<?=$_SERVER['PHP_SELF']?>" method="POST">
 					<div class="form-group row">
-						<label for="example-first-input" class="col-xs-2 col-form-label">First Name:</label>
+						<label for="example-first-input" class="col-xs-2 col-form-label">Username:</label>
 						<div class="col-xs-10">
-							<input class="form-control" type="text" placeholder="First Name" id="firstname">
-							<br>
-					</div>
-					</div>
-					<div class="form-group row">
-						<label for="example-last-input" class="col-xs-2 col-form-label">Last Name:</label>
-						<div class="col-xs-10">
-							<input class="form-control" type="text" placeholder="Last Name" id="lastname">
+							<input class="form-control" type="text" placeholder="username" id="username">
 							<br>
 					</div>
 					</div>
