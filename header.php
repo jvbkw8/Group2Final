@@ -20,10 +20,11 @@ switch($_SERVER['PHP_SELF']){
 
 <div class="container" style="margin-bottom:1em">
   <h2><span style="float:right;"><?php
-    if($_SESSION['ADMIN'] == 1){
+    $admin = "";
+    if(isset($_SESSION['ADMIN']) and $_SESSION['ADMIN'] == 1){
       $admin = "super user ";
     }
-    if($_SESSION['NAME']){
+    if(isset($_SESSION['NAME'])){
       echo "Welcome ".$admin.$_SESSION['NAME']."!";
     }
     ?></span></h2>
@@ -33,7 +34,7 @@ switch($_SERVER['PHP_SELF']){
     <li class="<?=$upload_active?>"><a href="upload.php">Upload</a></li>
     <li class="<?=$search_active?>"><a href="search.php">Search Manifests</a></li>
     <?php
-       if($_SESSION['ADMIN'] == 1){
+       if(isset($_SESSION['ADMIN']) and $_SESSION['ADMIN'] == 1){
           ?>
           <li class="<?=$account_active?>"><a href="account.php">Account Manager</a></li>
         <?php
