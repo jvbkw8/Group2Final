@@ -17,18 +17,9 @@ include "security.php";
 
 
 <body>
-
-<div class="container">
-  <h2>Search Manifests</h2>
-  <br>
-  <ul class="nav nav-pills nav-justified">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="upload.php">Upload</a></li>
-    <li class="active"><a href="#">Search Manifests</a></li>
-    <li><a href="account.php">Account</a></li>
-    <li><a href="logout.php">Logout</a></li>
-  </ul>
-</div>
+<?php
+	include "header.php";
+?>
 
 <div class="container">
 		<div class="row">
