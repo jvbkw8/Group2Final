@@ -20,7 +20,7 @@
         exit();
     }
     $hashedPassword = password_hash($user_password, PASSWORD_DEFAULT);
-    $sql = "INSERT into db.user (username, hashedpassword) values ('$user_name', '$hashedPassword');";
+    $sql = "INSERT into db.user (username, hashedpassword, activeuserflag, isadmin) values ('$user_name', '$hashedPassword', 1, 0);";
     //echo $sql;exit();
     $conn->query($sql);
     if($conn->affected_rows != 1){
