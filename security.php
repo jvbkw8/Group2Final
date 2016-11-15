@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!$_SESSION[NAME]){
+if(!isset($_SESSION['NAME'])){
   header("Location: /Group2Final/login.php");
 }
 ?>
