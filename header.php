@@ -1,4 +1,5 @@
 <?php
+echo $_SERVER['PHP_SELF'];
 switch($_SERVER['PHP_SELF']){
   case "/index.php":
       $index_active = "active";
