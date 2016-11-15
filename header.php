@@ -24,7 +24,7 @@ switch($_SERVER['PHP_SELF']){
       $admin = "super user ";
     }
     if($_SESSION['NAME']){
-      echo "Welcome "."$admin.$_SESSION['NAME']."!";
+      echo "Welcome ".$admin.$_SESSION['NAME']."!";
     }
     ?></span></h2>
   <br>
