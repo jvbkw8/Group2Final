@@ -1,19 +1,19 @@
 <?php
 echo $_SERVER['PHP_SELF'];
 switch($_SERVER['PHP_SELF']){
-  case "/index.php":
+  case "/Group2Final/index.php":
       $index_active = "active";
       break;
-  case "/upload.php":
+  case "/Group2Final/upload.php":
       $upload_active = "active";
       break;
-  case "/search.php":
+  case "/Group2Final/search.php":
       $search_active = "active";
       break;
-  case "/account.php":
+  case "/Group2Final/account.php":
       $account_active = "active";
       break;
-  case "/logout.php":
+  case "/Group2Final/logout.php":
       $logout = "active";
       break;
 }    
