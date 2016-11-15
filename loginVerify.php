@@ -39,7 +39,7 @@
 	if(password_verify($user_password, $row['hashedpassword'])){
 		$_SESSION[NAME] = $user_name;
 		//echo "success<br>";
-		header("Location: index.html");
+		header("Location: index.php");
 		exit();
 	} else {
 // 		echo "no user found, or password is incorrect<br>";
