@@ -14,17 +14,10 @@ include "security.php";
 
 <body>
 
+<?php
+	include "header.php";
+?>
 <div class="container">
-  <h2>Account information</h2>
-  <br>
-  <ul class="nav nav-pills nav-justified">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="upload.php">Upload</a></li>
-    <li><a href="search.php">Search Manifests</a></li>
-    <li class="active"><a href="#">Account</a></li>
-    <li><a href="logout.php">Logout</a></li>
-  </ul>
-  <br>
   <p> Firstname: </p>
   <p> Lastname: </p>
   <p> username: <?php echo $_SESSION[NAME];?></p>
