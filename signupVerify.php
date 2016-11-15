@@ -29,5 +29,5 @@
     }
     session_start();
     $_SESSION[NAME] = $user_name;
-    header("Location: index.html");
+    header("Location: index.php");
 ?>
