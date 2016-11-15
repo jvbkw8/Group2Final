@@ -41,12 +41,6 @@ include "security.php";
 							 <br>
  					 </div>	
  					 </div>
- 					 <div class="form-group row">
-						<label for="example-user-input" class="col-xs-2 col-form-label">User Type:</label>
- 					 		<input type="radio" name="user" value="student">Student
-							<input type="radio" name="user" value="researcher">Researcher
- 					 		<input type="radio" name="user" value="Data Scientist">Data Scientist<br>
-					</div>
 					<form method="post" enctype="multipart/form-data">
             <input type="file" name="my_file[]" multiple>
         </form>
