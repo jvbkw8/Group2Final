@@ -1,6 +1,6 @@
 <script>
   $(document).ready(function(){
-    $('head').append($("<link rel='icon' src='RADStab.ico'>"));
+    $('head').append($("<link rel='icon' src='RADstab.ico'>"));
   });
 </script>
 <?php
