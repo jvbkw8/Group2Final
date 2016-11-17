@@ -1,3 +1,6 @@
+<head>
+  <link rel="icon" src="RADS icon.png">
+</head>
 <?php
 switch($_SERVER['PHP_SELF']){
   case "/Group2Final/index.php":
@@ -19,7 +22,7 @@ switch($_SERVER['PHP_SELF']){
 ?>
 
 <div class="container" style="margin-bottom:1em">
-  <h2><span style="float:right;"><?php
+  <h2><img src="RADs logo.png"><span style="float:right;"><?php
     $admin = "";
     if(isset($_SESSION['ADMIN']) and $_SESSION['ADMIN'] == 1){
       $admin = "super user ";
