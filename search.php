@@ -82,11 +82,13 @@ tr:nth-child(even) {
 	echo "<th>File Name</th>";
 	echo "<th>File ID</th>";
 	echo "<th>Owner</th>";
+	echo "<th>Get File</th>";
+	echo "<th>View Manifest</th>";
 	echo "</tr>";
 
 	//data  
                      while ($row = mysqli_fetch_assoc($result))  {
-                      echo "<tr><td>{$row["name"]}</td><td>{$row["id"]}</td><td>{$row["name"]}</td></tr>";
+                      echo "<tr><td>{$row["name"]}</td><td>{$row["id"]}</td><td>someone</td><td><a href='dosomething.php' class='btn btn-info' type='submit' name='' value='download'>Download</a></td><td><a href='dosomethingelse.php' class='btn btn-info' type='submit' name='' value=''>View</a></td></tr>";
                       //echo "<td>{$row[1]}</td>";
                       //echo "<td>{$row[6]}</td>";
                       //echo "<td>{$row[7]}</td></tr>";
