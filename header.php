@@ -1,6 +1,8 @@
-<head>
-  <link rel="icon" src="RADStab.ico">
-</head>
+<script>
+  $(document).ready(function(){
+    $('head').append($("<link rel='icon' src='RADStab.ico'>"));
+  });
+</script>
 <?php
 switch($_SERVER['PHP_SELF']){
   case "/Group2Final/index.php":
