@@ -1,6 +1,6 @@
 <?php
 include "security.php";
-	include "header.php";
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,8 +15,9 @@ include "security.php";
 </head>
 
 <body>
-
-
+<?php
+	include "header.php";
+?>
 <br>
 <br>
 <br>
