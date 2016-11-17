@@ -1,5 +1,5 @@
 <script>
-    $('head').append($("<link rel='icon' src='RADstab.ico'>"));
+    $('head').append($("<link rel='shortcut icon' href='RADstab.ico'>"));
 </script>
 <?php
 switch($_SERVER['PHP_SELF']){
