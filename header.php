@@ -48,4 +48,4 @@ switch($_SERVER['PHP_SELF']){
     <li class="<?=$logout_active?>"><a href="logout.php">Logout</a></li>
   </ul>
 </div>
-<div class="container" style="top:142px">
+<div class="container" style="position:absolute;top:142px">
