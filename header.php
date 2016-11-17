@@ -1,5 +1,5 @@
 <script>
-    $(document).ready(function(){
+    $('head').ready(function(){
         $('head').append($("<link rel='shortcut icon' href='RADstab.ico'>"));
     });
 </script>
