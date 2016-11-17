@@ -22,7 +22,7 @@ switch($_SERVER['PHP_SELF']){
 ?>
 
 <div class="container" style="margin-bottom:1em">
-  <h2><img src="RADs logo.PNG"><span style="float:right;"><?php
+  <h2><img src="RADs logo.PNG" width="200px" height="auto"><span style="float:right;"><?php
     $admin = "";
     if(isset($_SESSION['ADMIN']) and $_SESSION['ADMIN'] == 1){
       $admin = "super user ";
