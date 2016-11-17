@@ -1,7 +1,5 @@
 <script>
-  $(document).ready(function(){
     $('head').append($("<link rel='icon' src='RADstab.ico'>"));
-  });
 </script>
 <?php
 switch($_SERVER['PHP_SELF']){
