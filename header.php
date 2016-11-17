@@ -23,8 +23,8 @@ switch($_SERVER['PHP_SELF']){
 }
 ?>
 <div class="container" style="width:100%; height:100%; overflow-y:none">
-<div class="container" style="padding-bottom:1em; position:fixed; top:0px; width:100%; z-index:50000; background-color:white;">
-    <h2><a href="index.php"><img src="RADs logo.PNG" width="200px" height="auto"></a><span style="padding-top:15px;float:right;"><?php
+<div class="container" style="border-bottom:1px solid black;padding-bottom:1em; position:fixed; top:0px; width:100%; z-index:50000; background-color:white;">
+    <h2><a href="index.php"><img src="RADs logo.PNG" width="200px" height="auto"></a><span style="padding:20px 25px 0px 0px;float:right;"><?php
     $admin = "";
     if(isset($_SESSION['ADMIN']) and $_SESSION['ADMIN'] == 1){
       $admin = "super user ";
