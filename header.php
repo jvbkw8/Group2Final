@@ -22,7 +22,7 @@ switch($_SERVER['PHP_SELF']){
       break;
 }
 ?>
-<div class="container" style="width:100%; height:100%; overflow-y:none">
+<div style="width:100%; height:100%; overflow-y:none">
 <div style="border-bottom:1px solid black;padding-bottom:1em; position:fixed; top:0px; width:100%; z-index:50000; background-color:white;">
     <h2><a href="index.php"><img src="RADs logo.PNG" width="200px" height="auto"></a><span style="padding:20px 25px 0px 0px;float:right;"><?php
     $admin = "";
