@@ -1,5 +1,7 @@
 <script>
-    $('head').append($("<link rel='shortcut icon' href='RADstab.ico'>"));
+    $(document).ready(function(){
+        $('head').append($("<link rel='shortcut icon' href='RADstab.ico'>"));
+    });
 </script>
 <?php
 switch($_SERVER['PHP_SELF']){
@@ -21,8 +23,8 @@ switch($_SERVER['PHP_SELF']){
 }
 ?>
 
-<div class="container" style="margin-bottom:1em">
-    <h2><a href="index.php"><img src="RADs logo.PNG" width="200px" height="auto"></a><span style="float:right;"><?php
+<div class="container" style="margin-bottom:1em; position:fixed; top:0px">
+    <h2><a href="index.php"><img src="RADs logo.PNG" width="200px" height="auto"></a><span style="padding-top:15px;float:right;"><?php
     $admin = "";
     if(isset($_SESSION['ADMIN']) and $_SESSION['ADMIN'] == 1){
       $admin = "super user ";
@@ -46,3 +48,4 @@ switch($_SERVER['PHP_SELF']){
     <li class="<?=$logout_active?>"><a href="logout.php">Logout</a></li>
   </ul>
 </div>
+<div class="container">
