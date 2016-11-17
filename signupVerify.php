@@ -12,7 +12,7 @@
     }
     include "connection.php";
     $conn = new mysqli($servername, $username, $password);
-    $usernamecheck = "select * from db.user where username = '$user_name';";
+    $usernamecheck = "select * from db.user where BINARY username = '$user_name';";
     //echo $usernamecheck;
     $result = $conn->query($usernamecheck);
     if($result->num_rows != 0){
