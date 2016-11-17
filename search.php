@@ -1,5 +1,10 @@
 <?php
 include "security.php";
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "db";
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,6 +20,23 @@ include "security.php";
 <title>Search Manifests</title>
 </head>
 
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
 
 <body>
 <?php
@@ -46,8 +68,44 @@ include "security.php";
 					  <a href="searchResult.php" class=" btn btn-info" type="submit" name="" value="login">Search</a>
 					</div>
 				</form>
-		</div>
 			</div>
+		</div>
+<?php
+//This block gets all the files and constructs a table.  more to come
+	$db_link = new mysqli('localhost', 'root', '', 'db');
+	$query = "select * from files;";
+	if ($result = mysqli_query($db_link, $query)){
+
+	echo "<table>";
+    	//header
+	echo "<tr>";
+	echo "<th>File Name</th>";
+	echo "<th>File ID</th>";
+	echo "<th>Owner</th>";
+	echo "</tr>";
+
+	//data  
+                     while ($row = mysqli_fetch_assoc($result))  {
+                      echo "<tr><td>{$row["name"]}</td><td>{$row["id"]}</td><td>{$row["name"]}</td></tr>";
+                      //echo "<td>{$row[1]}</td>";
+                      //echo "<td>{$row[6]}</td>";
+                      //echo "<td>{$row[7]}</td></tr>";
+                    } 
+
+                    echo "</table>";
+            }
+
+            mysqli_free_result($result);
+            mysqli_close($db_link);
+?>
+
+
+
+
+
+
+
+
 </div>
 		
 
