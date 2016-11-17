@@ -20,7 +20,7 @@ include "security.php";
 <div class="container">
   <p> Firstname: </p>
   <p> Lastname: </p>
-  <p> username: <?php echo $_SESSION['NAME'];?></p>
+  <input type = "checkbox" name = "user" value = "active"><p> username: <?php echo $_SESSION['NAME'];?></p>
 </div>
 
 </body>
