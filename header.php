@@ -48,5 +48,5 @@ switch($_SERVER['PHP_SELF']){
     <li class="<?=$logout_active?>"><a href="logout.php">Logout</a></li>
   </ul>
 </div>
-<div class="container" style="position:fixed;margin-top:234px; width:100%">
+<div class="container" style="margin-top:234px; width:100%">
     <div class="container" style="width:100%; height:100%; overflow-y:auto">
