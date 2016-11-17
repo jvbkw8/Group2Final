@@ -1,5 +1,5 @@
 <head>
-  <link rel="icon" src="RADS tab.PNG">
+  <link rel="icon" src="RADStab.ico">
 </head>
 <?php
 switch($_SERVER['PHP_SELF']){
