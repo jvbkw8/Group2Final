@@ -3,6 +3,16 @@ include "security.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
+<style>
+	input[type=checkbox] + label {
+  color: #ccc;
+  font-style: italic;
+} 
+input[type=checkbox]:checked + label {
+  color: #f00;
+  font-style: normal;
+} 
+	</style>
 <head>
   <title>RADs(Research Analysis and Database for Scientists)</title>
   <meta charset="utf-8">
@@ -20,7 +30,9 @@ include "security.php";
 <div class="container">
   <p> Firstname: </p>
   <p> Lastname: </p>
-  <input type = "checkbox" name = "user" value = "active"><p> username: <?php echo $_SESSION['NAME'];?></p>
+  <input type = "checkbox" name = "user" value = "active" "">
+	<label for="active">Active</label> 
+	<p> username: <?php echo $_SESSION['NAME'];?></p>
 </div>
 
 </body>
