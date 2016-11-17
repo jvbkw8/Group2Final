@@ -1,5 +1,5 @@
 <head>
-  <link rel="icon" src="RADS icon.png">
+  <link rel="icon" src="RADS icon.PNG">
 </head>
 <?php
 switch($_SERVER['PHP_SELF']){
@@ -22,7 +22,7 @@ switch($_SERVER['PHP_SELF']){
 ?>
 
 <div class="container" style="margin-bottom:1em">
-  <h2><img src="RADs logo.png"><span style="float:right;"><?php
+  <h2><img src="RADs logo.PNG"><span style="float:right;"><?php
     $admin = "";
     if(isset($_SESSION['ADMIN']) and $_SESSION['ADMIN'] == 1){
       $admin = "super user ";
