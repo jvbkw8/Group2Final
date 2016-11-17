@@ -23,7 +23,7 @@ switch($_SERVER['PHP_SELF']){
 }
 ?>
 
-<div class="container" style="margin-bottom:1em; position:fixed; top:0px">
+<div class="container" style="margin-bottom:1em; position:fixed; top:0px; width:100%">
     <h2><a href="index.php"><img src="RADs logo.PNG" width="200px" height="auto"></a><span style="padding-top:15px;float:right;"><?php
     $admin = "";
     if(isset($_SESSION['ADMIN']) and $_SESSION['ADMIN'] == 1){
@@ -48,4 +48,4 @@ switch($_SERVER['PHP_SELF']){
     <li class="<?=$logout_active?>"><a href="logout.php">Logout</a></li>
   </ul>
 </div>
-<div class="container">
+<div class="container" style="top:142px">
