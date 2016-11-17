@@ -21,12 +21,13 @@ include "security.php";
 <br>
 <br>
 <br>
-
+<div class="container">
 <form action="doupload.php" method="post" enctype="multipart/form-data">
     <input type="file" id="file" name="files[]" multiple="multiple" />
 	<br>
   <input type="submit" value="Upload!" />
 </form>
+	</div>
 
 </body>
 </html>
