@@ -23,7 +23,7 @@ switch($_SERVER['PHP_SELF']){
 }
 ?>
 <div class="container" style="width:100%; height:100%; overflow-y:none">
-<div class="container" style="margin-bottom:1em; position:fixed; top:0px; width:100%">
+<div class="container" style="padding-bottom:1em; position:fixed; top:0px; width:100%; z-index:50000; background-color:white;">
     <h2><a href="index.php"><img src="RADs logo.PNG" width="200px" height="auto"></a><span style="padding-top:15px;float:right;"><?php
     $admin = "";
     if(isset($_SESSION['ADMIN']) and $_SESSION['ADMIN'] == 1){
@@ -34,7 +34,7 @@ switch($_SERVER['PHP_SELF']){
     }
     ?></span></h2>
   <br>
-  <ul class="nav nav-pills nav-justified">
+  <ul class="nav nav-pills nav-justified" style="position:relative; margin-top:-2em;">
     <li class="<?=$index_active?>"><a href="index.php">Home</a></li>
     <li class="<?=$upload_active?>"><a href="upload.php">Upload</a></li>
     <li class="<?=$search_active?>"><a href="search.php">Search Manifests</a></li>
