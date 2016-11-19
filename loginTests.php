@@ -23,7 +23,12 @@ if(!$_SESSION['ADMIN']){
       data: loginCredentials[i],
       method: "POST",
       success: function(html){
-        $('#results').append($('<div>').html("success: " + html.success + "   username: " + html.name + "   isadmin: " + html.isadmin + "   dberrors: " + html.error));
+        $('#results').append($('<div>').html("   test-passed: " + html.test_passed +
+                                             "   login-success: " + html.login_success + 
+                                             "   login-expected: " + html.login_expected +
+                                             "   username: " + html.name + 
+                                             "   isadmin: " + html.isadmin + 
+                                             "   dberrors: " + html.error));
       },
       error: function(html){
         console.log("ajax error");
