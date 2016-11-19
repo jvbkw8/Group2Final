@@ -30,7 +30,7 @@
           .append($('<td>').html(html.isadmin))
           .append($('<td>').html(html.error))
           .addClass(testPassed);
-        $('#results').append(newRow);
+        $('#results').addChild(newRow);
       },
       error: function(jqxhr, errortext, errornum){
         console.log("ajax error: " + errortext);
@@ -42,7 +42,7 @@
   <link href = "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel = "stylesheet">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<table id="results" class="table table-bordered table-hover table-striped">
+<table class="table table-bordered table-hover table-striped">
   <thead>
     <th>Test Passed</th>
     <th>Login Success</th>
@@ -52,4 +52,6 @@
     <th>Admin?</th>
     <th>DB Errors</th>
   </thead>
+  <tbody id="results">
+  </tbody>
 </table>
