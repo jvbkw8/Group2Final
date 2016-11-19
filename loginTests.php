@@ -30,8 +30,8 @@
                                              "   isadmin: " + html.isadmin + 
                                              "   dberrors: " + html.error));
       },
-      error: function(html){
-        console.log("ajax error");
+      error: function(jqxhr, errortext, errornum){
+        console.log("ajax error: " + errortext);
       }
     });
   }
