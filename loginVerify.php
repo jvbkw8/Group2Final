@@ -1,5 +1,4 @@
 <?php
-	//error_reporting(-1);
         $user_name = $_POST['username'];
         $user_password = $_POST['userpassword'];
 	if(!$user_name or !$user_password){
@@ -10,11 +9,11 @@
 //         include "connection.php";
 // 	$conn = new mysqli($servername, $username, $password);
 	//echo "session started";
-// 	if(class_exists('PDO')){
-// 		echo "pdo exists";
-// 	} else {
-// 		echo "pdo does not exist";
-// 	}
+	if(class_exists('PDO')){
+		echo "pdo exists";
+	} else {
+		echo "pdo does not exist";
+	}
 	require_once "DBConn.php";
 // 	echo "dbconn included";
 	$dbconn = new DBConn();
