@@ -62,6 +62,6 @@
 				}
 				exit();
 			}
-		} else {echo "row returned is false.  query error: ".print_r($dbconn->getErrors(), true);
+		} else {echo "row returned is false.  query error: ".print_r($dbconn->getErrors(), true);}
 	} else {echo "could not connect to DB";}
 ?>
