@@ -1,8 +1,8 @@
 <?php
-include "security.php";
-if(!$_SESSION['ADMIN']){
-  header("Location: login.php");
-}
+// include "security.php";
+// if(!$_SESSION['ADMIN']){
+//   header("Location: login.php");
+// }
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
