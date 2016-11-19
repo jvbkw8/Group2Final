@@ -11,17 +11,17 @@
 			if($_POST['expected'] == "false"){
 				$passed = "true";
 			}
-			$returnarray = array("login_success"=>"false",
-					    "login_expected"=>$_POST['expected'],
-					    "test_passed"=>$passed,
-					    "username"=>$user_name,
-					    "error"=>$errorstring);
-			echo json_encode($returnarray);
-// 			echo "{login_success: 'false',
-// 			login_expected: '".$_POST['expected']."',
-// 			test_passed: '".$passed."',
-// 			username: '".$user_name."',
-// 			error: '".$errorstring."'}";
+// 			$returnarray = array("login_success"=>"false",
+// 					    "login_expected"=>$_POST['expected'],
+// 					    "test_passed"=>$passed,
+// 					    "username"=>$user_name,
+// 					    "error"=>$errorstring);
+// 			echo json_encode($returnarray);
+			echo "{login_success: 'false',
+			login_expected: '".$_POST['expected']."',
+			test_passed: '".$passed."',
+			username: '".$user_name."',
+			error: '".$errorstring."'}";
 		} else {
 			header("Location: login.php?error=Invalid username or password");
 		}
@@ -54,19 +54,19 @@
 				if($_POST['expected'] == "true"){
 					$passed = "true";
 				}
-				$returnarray = array("login_success"=>"true",
-						    "login_expected"=>$_POST['expected'],
-						    "test_passed"=>$passed,
-						    "username"=>$user_name,
-						    "isadmin"=>$row['isadmin'],
-						    "error"=>$errorstring);
-				echo json_encode($returnarray);
-// 				echo "{login_success: 'true',
-// 				login_expected: '".$_POST['expected']."',
-// 				test_passed: '".$passed."',
-// 				username: '".$user_name."',
-// 				isadmin: '".$row['isadmin']."',
-// 				error: '0'}";
+// 				$returnarray = array("login_success"=>"true",
+// 						    "login_expected"=>$_POST['expected'],
+// 						    "test_passed"=>$passed,
+// 						    "username"=>$user_name,
+// 						    "isadmin"=>$row['isadmin'],
+// 						    "error"=>$errorstring);
+// 				echo json_encode($returnarray);
+				echo "{login_success: 'true',
+				login_expected: '".$_POST['expected']."',
+				test_passed: '".$passed."',
+				username: '".$user_name."',
+				isadmin: '".$row['isadmin']."',
+				error: '0'}";
 			} else {
 				header("Location: index.php");
 			}
@@ -77,17 +77,17 @@
 				if($_POST['expected'] == "false"){
 					$passed = "true";
 				}
-				$returnarray = array("login_success"=>"false",
-						    "login_expected"=>$_POST['expected'],
-						    "test_passed"=>$passed,
-						    "username"=>$user_name,
-						    "error"=>$errorstring);
-				echo json_encode($returnarray);
-// 				echo "{login_success: 'false',
-// 				login_expected: '".$_POST['expected']."',
-// 				test_passed: '".$passed."',
-// 				username: '".$user_name."',
-// 				error: '".$errorstring."'}";
+// 				$returnarray = array("login_success"=>"false",
+// 						    "login_expected"=>$_POST['expected'],
+// 						    "test_passed"=>$passed,
+// 						    "username"=>$user_name,
+// 						    "error"=>$errorstring);
+// 				echo json_encode($returnarray);
+				echo "{login_success: 'false',
+				login_expected: '".$_POST['expected']."',
+				test_passed: '".$passed."',
+				username: '".$user_name."',
+				error: '".$errorstring."'}";
 			} else {
 				header("Location: login.php?error=Invalid username or password");
 			}
