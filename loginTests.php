@@ -22,7 +22,7 @@
       url:"loginVerify.php",
       data: loginCredentials[i],
       method: "POST",
-      success: function(returnedhtml){
+      success: function(html){
         //var html = JSON.parse(returnedhtml);
         $('#results').append($('<div>').html("   test-passed: " + html.test_passed +
                                              "   login-success: " + html.login_success + 
