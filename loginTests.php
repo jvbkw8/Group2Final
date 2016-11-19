@@ -4,6 +4,7 @@ if(!$_SESSION['ADMIN']){
   header("Location: login.php");
 }
 ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
   var loginCredentials = [
     {test:true, username:"", userpassword:"",expected:false}, //no username or password
