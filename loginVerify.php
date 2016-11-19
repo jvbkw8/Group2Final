@@ -6,23 +6,9 @@
 		exit();
 	}
 	session_start(); // session starts with the help of this function
-//         include "connection.php";
-// 	$conn = new mysqli($servername, $username, $password);
-	//echo "session started";
-// 	if(class_exists('PDO')){
-// 		echo "pdo exists";
-// 	} else {
-// 		echo "pdo does not exist";
-// 	}exit();
 	require_once "DBConn.php";
-// 	echo "dbconn included";
 	$dbconn = new DBConn();
-// 	echo "dbconn created";
 	if($dbconn->connectToDatabase()){
-	// 	echo "connected to db<br>";
-		//$link = mysqli_connect("$servername", "$username", "$password", "$dbname") or die ("Connection Error " . mysqli_error($link));
-
-		//$sql = "SELECT username, isadmin, hashedpassword FROM db.user WHERE BINARY username = '$user_name' and activeuserflag = 1;";
 		$sql = "SELECT username, isadmin, hashedpassword FROM db.user WHERE BINARY username = ? AND activeuserflag = 1;";
 		$rows = $dbconn->select($sql, array($user_name));
 		$row = $rows[0];
@@ -32,38 +18,28 @@
 				$errorstring .= $error."<br>";
 			}
 			$errorstring = rtrim($errorstring, "<br>");
-		} //else {
-	// 		echo "no errors after select statement<br>";
-	// 	}
-	// 	$result = $conn->query($sql);
-	// 	$row = $result->fetch_assoc();
-		echo "<pre>".print_r($row, true)."</pre>";
-		echo "<br>isset row hashedpassword: ".isset($row['hashedpassword']);
-		echo "<br>password verify: ".password_verify($user_password, $row['hashedpassword']);
+		}
 		if(isset($row['hashedpassword']) and password_verify($user_password, $row['hashedpassword'])){
 			$_SESSION['NAME'] = $user_name;
 			$_SESSION['ADMIN'] = $row['isadmin'];
-			//echo "success<br>";
-// 			if(isset($_POST['test'])){
+			if(isset($_POST['test'])){
 				echo "{success: true,
 				name: '".$user_name."',
 				isadmin: '".$row['isadmin']."',
 				error: 0}";
-// 			} else {
-// 				header("Location: index.php");
-// 			}
+			} else {
+				header("Location: index.php");
+			}
 			exit();
 		} else {
-			//if(isset($_POST['test'])){
+			if(isset($_POST['test'])){
 				echo "{success: false,
 				name: '".$user_name."',
 				error: '".$errorstring."'}";
-			//} else {
-	// 			echo "no user found, or password is incorrect<br>";
-			//	header("Location: login.php?error=Invalid username or password");
-			//}
+			} else {
+				header("Location: login.php?error=Invalid username or password");
+			}
 			exit();
 		}
-// 		} else {echo "row returned is false.  query error: ".print_r($dbconn->getErrors(), true);}
 	} else {echo "could not connect to DB";}
 ?>
