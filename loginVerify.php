@@ -27,7 +27,7 @@
 	if($dbconn->connectToDatabase()){
 		$sql = "SELECT username, isadmin, hashedpassword FROM db.user WHERE BINARY username = ? AND activeuserflag = 1;";
 		$rows = $dbconn->select($sql, array($user_name));
-		if($rows !== false && count($rows == 1)){
+		if($rows !== false && count($rows) == 1){
 			$row = $rows[0];
 			$errorstring = "";
 		} else {
