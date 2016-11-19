@@ -21,6 +21,7 @@ if(!$_SESSION['ADMIN']){
     $.ajax({
       url:"loginVerify.php",
       data: loginCredentials[i],
+      method: "POST",
       success: function(html){
         $('#results').append($('<div>').html("success: " + html.success + "   username: " + html.name + "   isadmin: " + html.isadmin + "   dberrors: " + html.error));
       },
