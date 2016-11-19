@@ -36,8 +36,8 @@
 	// 	}
 	// 	$result = $conn->query($sql);
 	// 	$row = $result->fetch_assoc();
-
-		if($row && password_verify($user_password, $row['hashedpassword'])){
+		echo "<pre>".print_r($row, true)."</pre>";
+		if(isset($row['hashedpassword']) and isset($row['isadmin']) && password_verify($user_password, $row['hashedpassword'])){
 			$_SESSION['NAME'] = $user_name;
 			$_SESSION['ADMIN'] = $row['isadmin'];
 			//echo "success<br>";
@@ -54,7 +54,6 @@
 			//if(isset($_POST['test'])){
 				echo "{success: false,
 				name: '".$user_name."',
-				isadmin: '".$row['isadmin']."',
 				error: '".$errorstring."'}";
 			//} else {
 	// 			echo "no user found, or password is incorrect<br>";
