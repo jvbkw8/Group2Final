@@ -5,6 +5,9 @@
 		header("Location: login.php?error=Invalid username or password");
 		exit();
 	}
+	if(isset($_POST['test'])){
+		header("Content-Type: application/json");
+	}
 	session_start(); // session starts with the help of this function
 	require_once "DBConn.php";
 	$dbconn = new DBConn();
