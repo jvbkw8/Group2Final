@@ -42,7 +42,7 @@
 		$_SESSION['NAME'] = $user_name;
 		$_SESSION['ADMIN'] = $row['isadmin'];
 		//echo "success<br>";
-		if(isset($_POST['test']){
+		if(isset($_POST['test'])){
 			echo "{success: true,
 			name: '$user_name',
 			isadmin: $row['isadmin'],
