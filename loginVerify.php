@@ -27,7 +27,9 @@
 	if($dbconn->connectToDatabase()){
 		$sql = "SELECT username, isadmin, hashedpassword FROM db.user WHERE BINARY username = ? AND activeuserflag = 1;";
 		$rows = $dbconn->select($sql, array($user_name));
-		$row = $rows[0];
+		if($rows !== false){
+			$row = $rows[0];
+		}
 		$errorstring = "";
 		if(count($errors = $dbconn->getErrors()) > 0){
 			foreach($errors as $error){
@@ -35,7 +37,7 @@
 			}
 			$errorstring = rtrim($errorstring, "<br>");
 		}
-		if(isset($row['hashedpassword']) and password_verify($user_password, $row['hashedpassword'])){
+		if(!$errorstring and isset($row['hashedpassword']) and password_verify($user_password, $row['hashedpassword'])){
 			$_SESSION['NAME'] = $user_name;
 			$_SESSION['ADMIN'] = $row['isadmin'];
 			if(isset($_POST['test'])){
@@ -69,5 +71,5 @@
 			}
 			exit();
 		}
-	} else {echo "could not connect to DB";}
+	} else {header("Location: login.php?error=Problems connecting.  Please try again later.");}
 ?>
