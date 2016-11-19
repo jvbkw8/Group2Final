@@ -26,7 +26,13 @@
 			$_SESSION['NAME'] = $user_name;
 			$_SESSION['ADMIN'] = $row['isadmin'];
 			if(isset($_POST['test'])){
-				echo "{success: true,
+				$passed = false;
+				if($_POST['expected'] == true){
+					$passed = true;
+				}
+				echo "{login-success: true,
+				login-expected: '".$_POST['expected']."',
+				test-passed: '".$passed."',
 				name: '".$user_name."',
 				isadmin: '".$row['isadmin']."',
 				error: 0}";
@@ -36,7 +42,13 @@
 			exit();
 		} else {
 			if(isset($_POST['test'])){
-				echo "{success: false,
+				$passed = false;
+				if($_POST['expected'] == false){
+					$passed = true;
+				}
+				echo "{login-success: false,
+				login-expected: '".$_POST['expected']."',
+				test-passed: '".$passed."',
 				name: '".$user_name."',
 				error: '".$errorstring."'}";
 			} else {
