@@ -13,7 +13,7 @@
 		echo "pdo exists";
 	} else {
 		echo "pdo does not exist";
-	}
+	}exit();
 	require_once "DBConn.php";
 // 	echo "dbconn included";
 	$dbconn = new DBConn();
