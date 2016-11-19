@@ -54,9 +54,9 @@
 	} else {
 		if(isset($_POST['test'])){
 			echo "{success: false,
-			name: '$user_name',
-			isadmin: $row['isadmin'],
-			error: '$errorstring'}";
+			name: '".$user_name."',
+			isadmin: '".$row['isadmin']."',
+			error: '".$errorstring."'}";
 		} else {
 // 			echo "no user found, or password is incorrect<br>";
 			header("Location: login.php?error=Invalid username or password");
