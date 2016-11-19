@@ -26,7 +26,7 @@
         $('#results').append($('<div>').html("   test-passed: " + html.test_passed +
                                              "   login-success: " + html.login_success + 
                                              "   login-expected: " + html.login_expected +
-                                             "   username: " + html.name + 
+                                             "   username: " + html.username + 
                                              "   isadmin: " + html.isadmin + 
                                              "   dberrors: " + html.error));
       },
