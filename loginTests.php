@@ -30,7 +30,7 @@
           .append($('<td>').html(html.isadmin))
           .append($('<td>').html(html.error))
           .addClass(testPassed);
-        $('#results').addChild(newRow);
+        $('#results').append(newRow);
       },
       error: function(jqxhr, errortext, errornum){
         console.log("ajax error: " + errortext);
