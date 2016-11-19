@@ -30,9 +30,9 @@
 				if($_POST['expected'] == true){
 					$passed = true;
 				}
-				echo "{login-success: true,
-				login-expected: '".$_POST['expected']."',
-				test-passed: '".$passed."',
+				echo "{login_success: true,
+				login_expected: '".$_POST['expected']."',
+				test_passed: '".$passed."',
 				name: '".$user_name."',
 				isadmin: '".$row['isadmin']."',
 				error: 0}";
@@ -46,9 +46,9 @@
 				if($_POST['expected'] == false){
 					$passed = true;
 				}
-				echo "{login-success: false,
-				login-expected: '".$_POST['expected']."',
-				test-passed: '".$passed."',
+				echo "{login_success: false,
+				login_expected: '".$_POST['expected']."',
+				test_passed: '".$passed."',
 				name: '".$user_name."',
 				error: '".$errorstring."'}";
 			} else {
