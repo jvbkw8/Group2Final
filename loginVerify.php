@@ -1,12 +1,25 @@
 <?php
+	if(isset($_POST['test'])){
+		header("Content-Type: application/json");
+	}
         $user_name = $_POST['username'];
         $user_password = $_POST['userpassword'];
 	if(!$user_name or !$user_password){
-		header("Location: login.php?error=Invalid username or password");
+		if(isset($_POST['test'])){
+			$errorstring = "";
+			$passed = "false";
+			if($_POST['expected'] == "false"){
+				$passed = "true";
+			}
+			echo "{login_success: 'false',
+			login_expected: '".$_POST['expected']."',
+			test_passed: '".$passed."',
+			name: '".$user_name."',
+			error: '".$errorstring."'}";
+		} else {
+			header("Location: login.php?error=Invalid username or password");
+		}
 		exit();
-	}
-	if(isset($_POST['test'])){
-		header("Content-Type: application/json");
 	}
 	session_start(); // session starts with the help of this function
 	require_once "DBConn.php";
@@ -26,27 +39,27 @@
 			$_SESSION['NAME'] = $user_name;
 			$_SESSION['ADMIN'] = $row['isadmin'];
 			if(isset($_POST['test'])){
-				$passed = false;
-				if($_POST['expected'] == true){
-					$passed = true;
+				$passed = "false";
+				if($_POST['expected'] == "true"){
+					$passed = "true";
 				}
-				echo "{login_success: true,
+				echo "{login_success: 'true',
 				login_expected: '".$_POST['expected']."',
 				test_passed: '".$passed."',
 				name: '".$user_name."',
 				isadmin: '".$row['isadmin']."',
-				error: 0}";
+				error: '0'}";
 			} else {
 				header("Location: index.php");
 			}
 			exit();
 		} else {
 			if(isset($_POST['test'])){
-				$passed = false;
-				if($_POST['expected'] == false){
-					$passed = true;
+				$passed = "false";
+				if($_POST['expected'] == "false"){
+					$passed = "true";
 				}
-				echo "{login_success: false,
+				echo "{login_success: 'false',
 				login_expected: '".$_POST['expected']."',
 				test_passed: '".$passed."',
 				name: '".$user_name."',
