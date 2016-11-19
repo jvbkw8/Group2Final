@@ -23,7 +23,7 @@
       data: loginCredentials[i],
       method: "POST",
       success: function(returnedhtml){
-        var html = JSON.parse(returnedhtml);
+        //var html = JSON.parse(returnedhtml);
         $('#results').append($('<div>').html("   test-passed: " + html.test_passed +
                                              "   login-success: " + html.login_success + 
                                              "   login-expected: " + html.login_expected +
