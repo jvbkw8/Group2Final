@@ -15,6 +15,7 @@
 					    "login_expected"=>$_POST['expected'],
 					    "test_passed"=>$passed,
 					    "username"=>$user_name,
+					    "password"=>$user_password,
 					    "error"=>$errorstring);
 			echo json_encode($returnarray);
 // 			echo "{login_success: 'false',
@@ -58,6 +59,7 @@
 						    "login_expected"=>$_POST['expected'],
 						    "test_passed"=>$passed,
 						    "username"=>$user_name,
+						    "password"=>$user_password,
 						    "isadmin"=>$row['isadmin'],
 						    "error"=>$errorstring);
 				echo json_encode($returnarray);
@@ -81,6 +83,7 @@
 						    "login_expected"=>$_POST['expected'],
 						    "test_passed"=>$passed,
 						    "username"=>$user_name,
+						    "password"=>$user_password,
 						    "error"=>$errorstring);
 				echo json_encode($returnarray);
 // 				echo "{login_success: 'false',
