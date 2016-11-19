@@ -48,6 +48,7 @@
     <th>Login Success</th>
     <th>Expected Success?</th>
     <th>Username</th>
+    <th>Password</th>
     <th>Admin?</th>
     <th>DB Errors</th>
   </thead>
