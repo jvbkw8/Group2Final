@@ -37,7 +37,7 @@
 	// 	$result = $conn->query($sql);
 	// 	$row = $result->fetch_assoc();
 		echo "<pre>".print_r($row, true)."</pre>";
-		if(isset($row['hashedpassword']) and isset($row['isadmin']) && password_verify($user_password, $row['hashedpassword'])){
+		if(isset($row['hashedpassword']) and password_verify($user_password, $row['hashedpassword'])){
 			$_SESSION['NAME'] = $user_name;
 			$_SESSION['ADMIN'] = $row['isadmin'];
 			//echo "success<br>";
