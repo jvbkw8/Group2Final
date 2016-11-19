@@ -14,7 +14,7 @@
 			echo "{login_success: 'false',
 			login_expected: '".$_POST['expected']."',
 			test_passed: '".$passed."',
-			name: '".$user_name."',
+			username: '".$user_name."',
 			error: '".$errorstring."'}";
 		} else {
 			header("Location: login.php?error=Invalid username or password");
@@ -51,7 +51,7 @@
 				echo "{login_success: 'true',
 				login_expected: '".$_POST['expected']."',
 				test_passed: '".$passed."',
-				name: '".$user_name."',
+				username: '".$user_name."',
 				isadmin: '".$row['isadmin']."',
 				error: '0'}";
 			} else {
@@ -67,7 +67,7 @@
 				echo "{login_success: 'false',
 				login_expected: '".$_POST['expected']."',
 				test_passed: '".$passed."',
-				name: '".$user_name."',
+				username: '".$user_name."',
 				error: '".$errorstring."'}";
 			} else {
 				header("Location: login.php?error=Invalid username or password");
