@@ -24,44 +24,44 @@
 
 		//$sql = "SELECT username, isadmin, hashedpassword FROM db.user WHERE BINARY username = '$user_name' and activeuserflag = 1;";
 		$sql = "SELECT username, isadmin, hashedpassword FROM db.user WHERE BINARY username = ? AND activeuserflag = 1;";
-		if(($row = $dbconn->select($sql, array($user_name))) != false){
-			$errorstring = "";
-			if(count($errors = $dbconn->getErrors()) > 0){
-				foreach($errors as $error){
-					$errorstring .= $error."<br>";
-				}
-				$errorstring = rtrim($errorstring, "<br>");
-			} //else {
-		// 		echo "no errors after select statement<br>";
-		// 	}
-		// 	$result = $conn->query($sql);
-		// 	$row = $result->fetch_assoc();
-
-			if(password_verify($user_password, $row['hashedpassword'])){
-				$_SESSION['NAME'] = $user_name;
-				$_SESSION['ADMIN'] = $row['isadmin'];
-				//echo "success<br>";
-				if(isset($_POST['test'])){
-					echo "{success: true,
-					name: '".$user_name."',
-					isadmin: '".$row['isadmin']."',
-					error: 0}";
-				} else {
-					header("Location: index.php");
-				}
-				exit();
-			} else {
-				if(isset($_POST['test'])){
-					echo "{success: false,
-					name: '".$user_name."',
-					isadmin: '".$row['isadmin']."',
-					error: '".$errorstring."'}";
-				} else {
-		// 			echo "no user found, or password is incorrect<br>";
-					header("Location: login.php?error=Invalid username or password");
-				}
-				exit();
+		$row = $dbconn->select($sql, array($user_name)))
+		$errorstring = "";
+		if(count($errors = $dbconn->getErrors()) > 0){
+			foreach($errors as $error){
+				$errorstring .= $error."<br>";
 			}
-		} else {echo "row returned is false.  query error: ".print_r($dbconn->getErrors(), true);}
+			$errorstring = rtrim($errorstring, "<br>");
+		} //else {
+	// 		echo "no errors after select statement<br>";
+	// 	}
+	// 	$result = $conn->query($sql);
+	// 	$row = $result->fetch_assoc();
+
+		if(password_verify($user_password, $row['hashedpassword'])){
+			$_SESSION['NAME'] = $user_name;
+			$_SESSION['ADMIN'] = $row['isadmin'];
+			//echo "success<br>";
+// 			if(isset($_POST['test'])){
+				echo "{success: true,
+				name: '".$user_name."',
+				isadmin: '".$row['isadmin']."',
+				error: 0}";
+// 			} else {
+// 				header("Location: index.php");
+// 			}
+			exit();
+		} else {
+			//if(isset($_POST['test'])){
+				echo "{success: false,
+				name: '".$user_name."',
+				isadmin: '".$row['isadmin']."',
+				error: '".$errorstring."'}";
+			//} else {
+	// 			echo "no user found, or password is incorrect<br>";
+			//	header("Location: login.php?error=Invalid username or password");
+			//}
+			exit();
+		}
+// 		} else {echo "row returned is false.  query error: ".print_r($dbconn->getErrors(), true);}
 	} else {echo "could not connect to DB";}
 ?>
