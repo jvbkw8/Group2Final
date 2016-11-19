@@ -24,12 +24,20 @@
       method: "POST",
       success: function(html){
         //var html = JSON.parse(returnedhtml);
-        $('#results').append($('<div>').html("   test-passed: " + html.test_passed +
-                                             "   login-success: " + html.login_success + 
-                                             "   login-expected: " + html.login_expected +
-                                             "   username: " + html.username + 
-                                             "   isadmin: " + html.isadmin + 
-                                             "   dberrors: " + html.error));
+        var newRow = $('<tr>');
+        newRow.append($('<td>').html(html.test_passed))
+          .append($('<td>').html(html.login_success))
+          .append($('<td>').html(html.login_expected))
+          .append($('<td>').html(html.username))
+          .append($('<td>').html(html.isadmin))
+          .append($('<td>').html(html.error));
+        $('#results').append(newRow);
+//         $('#results').append($('<tr>').html("   test-passed: " + html.test_passed +
+//                                              "   login-success: " + html.login_success + 
+//                                              "   login-expected: " + html.login_expected +
+//                                              "   username: " + html.username + 
+//                                              "   isadmin: " + html.isadmin + 
+//                                              "   dberrors: " + html.error));
       },
       error: function(jqxhr, errortext, errornum){
         console.log("ajax error: " + errortext);
@@ -37,5 +45,13 @@
     });
   }
 </script>
-<div id="results">
-</div>
+<table id="results">
+  <thead>
+    <th>Test Passed</th>
+    <th>Login Success</th>
+    <th>Expected Success?</th>
+    <th>Username</th>
+    <th>Admin?</th>
+    <th>DB Errors</th>
+  </thead>
+</table>
