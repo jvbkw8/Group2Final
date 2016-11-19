@@ -25,7 +25,11 @@
       success: function(html){
         //var html = JSON.parse(returnedhtml);
         var newRow = $('<tr>');
-        newRow.append($('<td>').html(html.test_passed))
+        var testPassed = "success";
+        if(html.test_passed == "false"){
+          testPassed = "danger";
+        }
+        newRow.append($('<td>').html(html.test_passed).addClass(testPassed))
           .append($('<td>').html(html.login_success))
           .append($('<td>').html(html.login_expected))
           .append($('<td>').html(html.username))
@@ -49,7 +53,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<table id="results">
+<table id="results" class="table table-bordered table-hover>
   <thead>
     <th>Test Passed</th>
     <th>Login Success</th>
