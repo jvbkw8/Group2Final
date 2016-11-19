@@ -60,8 +60,8 @@
 		} else {
 // 			echo "no user found, or password is incorrect<br>";
 			header("Location: login.php?error=Invalid username or password");
-			exit();
 		}
+		exit();
 	}
 //}
 ?>
