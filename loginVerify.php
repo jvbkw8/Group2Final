@@ -24,7 +24,8 @@
 
 		//$sql = "SELECT username, isadmin, hashedpassword FROM db.user WHERE BINARY username = '$user_name' and activeuserflag = 1;";
 		$sql = "SELECT username, isadmin, hashedpassword FROM db.user WHERE BINARY username = ? AND activeuserflag = 1;";
-		$row = $dbconn->select($sql, array($user_name));
+		$rows = $dbconn->select($sql, array($user_name));
+		$row = $rows[0];
 		$errorstring = "";
 		if(count($errors = $dbconn->getErrors()) > 0){
 			foreach($errors as $error){
