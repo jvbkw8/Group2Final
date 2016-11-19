@@ -1,7 +1,7 @@
 <?php
-	if(isset($_POST['test'])){
-		header("Content-Type: application/json");
-	}
+// 	if(isset($_POST['test'])){
+// 		header("Content-Type: application/json");
+// 	}
         $user_name = $_POST['username'];
         $user_password = $_POST['userpassword'];
 	if(!$user_name or !$user_password){
