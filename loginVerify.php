@@ -52,7 +52,7 @@
 		}
 		exit();
 	} else {
-		if(isset($_POST['test']){
+		if(isset($_POST['test'])){
 			echo "{success: false,
 			name: '$user_name',
 			isadmin: $row['isadmin'],
