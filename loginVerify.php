@@ -44,8 +44,8 @@
 		//echo "success<br>";
 		if(isset($_POST['test'])){
 			echo "{success: true,
-			name: '$user_name',
-			isadmin: $row['isadmin'],
+			name: '".$user_name."',
+			isadmin: '".$row['isadmin']."',
 			error: 0}";
 		} else {
 			header("Location: index.php");
