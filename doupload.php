@@ -48,7 +48,7 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 
 			// prepare and bind
 			$stmt = $conn->prepare("INSERT INTO files (data,name) VALUES (?, ?)");
-			$stmt->bind_param("ss", $binaryData,  $name);		
+			$stmt->bind_param("bs", $binaryData,  $name);		
 			$stmt->execute();
 	        }
 	    }
