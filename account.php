@@ -63,7 +63,7 @@ input[type=checkbox]:checked + label {
 						<td><?php if($row['activeuserflag']){echo $Yes;} else {echo $No;}?></td>
 						<td><?php if($row['isadmin']){echo $Yes;} else {echo $No;}?></td>
 						<td><div id="<?php=$row['id']?>_active" class="btn btn-info" onclick="toggleUserActive(<?php echo $row['id'];?>);"><?php if($row['activeuserflag']){echo "Deactivate";} else {echo "Activate";}?></div></td>
-						<td><div class="btn btn-info"><?php if($row['isadmin']){echo "Adminify";} else {echo "Deadminify";}?></div></td>
+						<td><div class="btn btn-info"><?php if($row['isadmin']){echo "De-adminify";} else {echo "Adminify";}?></div></td>
 						<td><div class="btn btn-info">Reset Password</div></td>
 					</tr>
 				<?php
@@ -99,19 +99,22 @@ input[type=checkbox]:checked + label {
 				JSON.parse(html);
 				if(html.error){
 					$("#error").html(html.error);
+					$('#error').show();
 				}
 				if(html.success){
 					$('#success').html(html.success);
+					$('#success').show();
 				}
 			},
 			error:function(){
 				$('#error').html("Oops! Something went wrong.");
+				$('#error').show();
 				console.log("ajax error when toggling user active");
 			},
 		});
 		setTimeout(function(){
-			$("#error").slideUp(1000);
-			$("#success").slideUp(1000);
+			$("#error").fadeOut(1000);
+			$("#success").fadeOut(1000);
 		}, 7000);
 	}
 </script>
