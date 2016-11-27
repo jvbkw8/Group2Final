@@ -12,7 +12,7 @@ input[type=checkbox]:checked + label {
   color: #f00;
   font-style: normal;
 }
-#error #success{
+#error, #success{
 	position:fixed;
 	top:15px;
 	right:15px;
