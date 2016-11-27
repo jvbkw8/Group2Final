@@ -33,8 +33,8 @@ input[type=checkbox]:checked + label {
 <?php
 	include "header.php";
 ?>
-<div id="error" class="alert alert-danger" style="display:hidden"></div>
-<div id="success" class="alert alert-success" style="display:hidden"></div>
+<div id="error" class="alert alert-danger" style="display:none"></div>
+<div id="success" class="alert alert-success" style="display:none"></div>
 <div class="container">
 <?php
 	require_once "DBConn.php";
@@ -63,9 +63,9 @@ input[type=checkbox]:checked + label {
 						<td><?php echo $row['username'];?></td>
 						<td><?php if($row['activeuserflag']){echo $Yes;} else {echo $No;}?></td>
 						<td><?php if($row['isadmin']){echo $Yes;} else {echo $No;}?></td>
-						<td><div id="<?php=$row['id']?>_active" class="btn btn-info" onclick="toggleUserActive(<?php echo $row['id'];?>);"><?php if($row['activeuserflag']){echo "Deactivate";} else {echo "Activate";}?></div></td>
-						<td><div class="btn btn-info"><?php if($row['isadmin']){echo "De-adminify";} else {echo "Adminify";}?></div></td>
-						<td><div class="btn btn-info">Reset Password</div></td>
+						<td><div id="<?php echo $row['id']?>_active" class="btn btn-info" onclick="toggleUserActive(<?php echo $row['id'];?>);"><?php if($row['activeuserflag']){echo "Deactivate";} else {echo "Activate";}?></div></td>
+						<td><div id="<?php echo $row['id']?>_admin" class="btn btn-info" onclick="toggleUserAdmin(<?php echo $row['id'];?>);"><?php if($row['isadmin']){echo "De-adminify";} else {echo "Adminify";}?></div></td>
+						<td><div id="<?php echo $row['id']?>_password" class="btn btn-info" onclick="resetPassword(<?php echo $row['id'];?>);">Reset Password</div></td>
 					</tr>
 				<?php
 				}
@@ -89,6 +89,10 @@ input[type=checkbox]:checked + label {
 	
 	function resetPassword(id){
 		editUser(id, "resetPassword");	
+	}
+	
+	function toggleUserAdmin(id){
+		editUser(id, "toggleAdmin");
 	}
 	
 	function editUser(id, action){
