@@ -12,6 +12,11 @@ input[type=checkbox]:checked + label {
   color: #f00;
   font-style: normal;
 }
+#error #success{
+	position:fixed;
+	top:15px;
+	right:15px;
+}
 </style>
 <head>
   <title>RADs(Research Analysis and Database for Scientists)</title>
@@ -54,12 +59,12 @@ input[type=checkbox]:checked + label {
 				foreach($rows as $row){
 				?>
 					<tr>
-						<td><?php=$row['username']?></td>
+						<td><?php echo $row['username'];?></td>
 						<td><?php if($row['activeuserflag']){echo $Yes;} else {echo $No;}?></td>
 						<td><?php if($row['isadmin']){echo $Yes;} else {echo $No;}?></td>
 						<td><div id="<?php=$row['id']?>_active" class="btn btn-info" onclick="toggleUserActive(<?php echo $row['id'];?>);"><?php if($row['activeuserflag']){echo "Deactivate";} else {echo "Activate";}?></div></td>
-						<td><div class="btn btn-info"></div></td>
-						<td><div clsss="btn btn-info">Reset Password</div></td>
+						<td><div class="btn btn-info"><?php if($row['isadmin']){echo "Adminify";} else {echo "Deadminify";}?></div></td>
+						<td><div class="btn btn-info">Reset Password</div></td>
 					</tr>
 				<?php
 				}
@@ -104,8 +109,10 @@ input[type=checkbox]:checked + label {
 				console.log("ajax error when toggling user active");
 			},
 		});
-		$("#error").hide(7000);
-		$("#success").hide(7000);
+		setTimeout(function(){
+			$("#error").slideUp(1000);
+			$("#success").slideUp(1000);
+		}, 7000);
 	}
 </script>
 </body>
