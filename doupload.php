@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 
 //$valid_formats = array("jpg", "png", "gif", "zip", "bmp");
 $max_file_size = 1024*100; //100 kb
-$path = "data/"; // Upload directory
+//$path = "data/"; // Upload directory
 //$count = 0;
 
 if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
@@ -39,19 +39,16 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 			echo $name;
 			echo " accepted";
 			echo "<br>";
-			//$binaryData = addslashes (file_get_contents($_FILES['files']['tmp_name'][$f]));
-			//$sql = "INSERT INTO files (data,name) VALUES ('{$binaryData}', '{$name}')";
+			$binaryData = addslashes (file_get_contents($_FILES['files']['tmp_name'][$f]));
+			$sql = "INSERT INTO files (data,name) VALUES ('{$binaryData}', '{$name}')";
 			
-			$sql = "INSERT INTO files (name) VALUES ('{$name}')";
+			//$sql = "INSERT INTO files (name) VALUES ('{$name}')";
 			echo "<br>";
 			echo $sql;
 
 			// prepare and bind
-			//$stmt = $conn->prepare("INSERT INTO files (data,name) VALUES (?, ?)");
-			//$stmt->bind_param("ss", $binaryData,  $name);
-			
-			$stmt = $conn->prepare("INSERT INTO files (name) VALUES (?)");
-			$stmt->bind_param("s", $name);
+			$stmt = $conn->prepare("INSERT INTO files (data,name) VALUES (?, ?)");
+			$stmt->bind_param("ss", $binaryData,  $name);		
 			$stmt->execute();
 	        }
 	    }
