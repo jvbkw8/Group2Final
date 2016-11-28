@@ -79,12 +79,14 @@ input[type=checkbox]:checked + label {
 </div>
 <script>
 	function toggleUserActive(id){
-		if($('#'+id+'_active').is(":checked")){
-			var action = "activateUser";	
+		if($('#'+id+'_active').html() == "Activate"){
+			var action = "activateUser";
+			var newButtonText = "Deactivate";
 		} else {
 			var action = "deactivateUser";
+			var newButtonText = "Activate";
 		}
-		editUser(id, action);
+		editUser(id, action, id+"_active", newButtonText);
 	}
 	
 	function resetPassword(id){
@@ -92,16 +94,20 @@ input[type=checkbox]:checked + label {
 	}
 	
 	function toggleUserAdmin(id){
-		editUser(id, "toggleAdmin");
+		if($('#'+id+"_admin").html() == "Adminify"){
+			var newButtonText = "De-adminify";
+		} else {
+			var newButtonText = "Adminify";
+		}
+		editUser(id, "toggleAdmin", id+"_admin", newButtonText);
 	}
 	
-	function editUser(id, action){
+	function editUser(id, action, buttonToChange, newButtonText){
 		$.ajax({
 			url:"editUser.php",
 			method:"POST",
 			data:{id:id, action:action},
 			success:function(html){
-				JSON.parse(html);
 				if(html.error){
 					$("#error").html(html.error);
 					$('#error').show();
