@@ -130,7 +130,7 @@ input[type=checkbox]:checked + label {
 			console.log("clearing timeout");
 			window.clearTimeout(timeout);
 		}
-		var timeout = setTimeout(function(){
+		timeout = setTimeout(function(){
 			$("#error").fadeOut(1000);
 			$("#success").fadeOut(1000);
 		}, 7000);
