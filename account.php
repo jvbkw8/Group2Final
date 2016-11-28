@@ -95,11 +95,13 @@ input[type=checkbox]:checked + label {
 	
 	function toggleUserAdmin(id){
 		if($('#'+id+"_admin").html() == "Adminify"){
+			var action = "adminify";
 			var newButtonText = "De-adminify";
 		} else {
+			var action = "deadminify";
 			var newButtonText = "Adminify";
 		}
-		editUser(id, "toggleAdmin", id+"_admin", newButtonText);
+		editUser(id, action, id+"_admin", newButtonText);
 	}
 	
 	function editUser(id, action, buttonToChange, newButtonText){
@@ -118,12 +120,15 @@ input[type=checkbox]:checked + label {
 				}
 			},
 			error:function(bla, error, errortext){
-				$('#error').html("Oops! Something went wrong." + error + " " + errortext);
+				$('#error').html("Oops! Something went wrong.");
 				$('#error').show();
-				console.log("ajax error when toggling user active");
+				console.log("ajax error when toggling user active. " + error + " " + errortext);
 			},
 		});
-		setTimeout(function(){
+		if(timeout){
+			clearTimeout(timeout);
+		}
+		var timeout = setTimeout(function(){
 			$("#error").fadeOut(1000);
 			$("#success").fadeOut(1000);
 		}, 7000);
