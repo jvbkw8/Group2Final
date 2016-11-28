@@ -3,6 +3,7 @@ if(!isset($_POST['id']) || !isset($_POST['action'])){
   echo "{error: 'Required data not sent'}";
   exit();
 }
+header("Content-Type: application/json");
 require "DBConn.php";
 $conn = new DBConn();
 if($conn->connectToDatabase()){
