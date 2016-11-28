@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -13,10 +15,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-//$valid_formats = array("jpg", "png", "gif", "zip", "bmp");
+
 $max_file_size = 1024*100; //100 kb
-//$path = "data/"; // Upload directory
-//$count = 0;
 
 if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 	// Loop $_FILES to exeicute all files
@@ -29,26 +29,18 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 	            $message[] = "$name is too large!.";
 	            continue; // Skip large files
 	        }
-//			elseif( ! in_array(pathinfo($name, PATHINFO_EXTENSION), $valid_formats) ){
-//				$message[] = "$name is not a valid format";
-//				continue; // Skip invalid file formats
-//			}
-	        else{ // No error found Move uploaded files 
-//	            if(move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path.$name))
-//	            $count++; // Number of successfully uploaded file
-			echo $name;
-			echo " accepted";
-			echo "<br>";
-			$binaryData = addslashes (file_get_contents($_FILES['files']['tmp_name'][$f]));
-			$sql = "INSERT INTO files (data,name) VALUES ('{$binaryData}', '{$name}')";
-			
-			//$sql = "INSERT INTO files (name) VALUES ('{$name}')";
-			echo "<br>";
-			echo $sql;
 
+	        else{ // No error found
+
+			$binaryData = file_get_contents($_FILES['files']['tmp_name'][$f]);
+			$owner = $_SESSION['NAME'];
+			$null = NULL;
 			// prepare and bind
-			$stmt = $conn->prepare("INSERT INTO files (data,name) VALUES (?, ?)");
-			$stmt->bind_param("bs", $binaryData,  $name);		
+			$stmt = $conn->prepare("INSERT INTO files (data,name,owner) VALUES (?, ?, ?)");
+			$stmt->bind_param("bss", $null,  $name, $owner);
+			
+			$stmt->send_long_data(0, $binaryData);	//this made it all work
+				
 			$stmt->execute();
 	        }
 	    }
