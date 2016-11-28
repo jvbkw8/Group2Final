@@ -33,8 +33,8 @@ input[type=checkbox]:checked + label {
 <?php
 	include "header.php";
 ?>
-<div id="error" class="alert alert-danger" style="display:none"><?php echo $_GET['error']?></div>
-<div id="success" class="alert alert-success" style="display:none"><?php echo $_GET['success']?></div>
+<div id="error" class="alert alert-danger" style="display:none"><?php echo $_GET['error'];?></div>
+<div id="success" class="alert alert-success" style="display:none"><?php echo $_GET['success'];?></div>
 <div class="container">
 <?php
 	require_once "DBConn.php";
@@ -78,23 +78,26 @@ input[type=checkbox]:checked + label {
 ?>
 </div>
 <script>
-	<?php
-	if(isset($_GET['error'])){
-		?>
-		$('#error').show();
-		setTimeout(function(){
-			$("#error").fadeOut(1000);
-		}, 7000);
+	$(document).ready(function(){
 		<?php
-	}
-	if(isset($_GET['success'])){
+		if(isset($_GET['error'])){
+			?>
+			$('#error').show();
+			setTimeout(function(){
+				$("#error").fadeOut(1000);
+			}, 7000);
+			<?php
+		}
+		if(isset($_GET['success'])){
+			?>
+			$('#success').show();
+			setTimeout(function(){
+				$("#success").fadeOut(1000);
+			}, 7000);
+			<?php
+		}
 		?>
-		setTimeout(function(){
-			$("#success").fadeOut(1000);
-		}, 7000);
-		<?php
-	}
-	?>
+	});
 	var timeout;
 	function toggleUserActive(id){
 		if($('#'+id+'_active').html() == "Activate"){
