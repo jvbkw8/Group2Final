@@ -18,7 +18,7 @@ if(isset($_POST['deleteid']))
 
 	mysqli_close($db_link);
 
-	//header( 'Location: /Group2Final/search.php' ) ;
+	header( 'Location: /Group2Final/search.php' ) ;
 	exit();
 	}
 ?>
