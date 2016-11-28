@@ -117,8 +117,8 @@ input[type=checkbox]:checked + label {
 					$('#success').show();
 				}
 			},
-			error:function(){
-				$('#error').html("Oops! Something went wrong.");
+			error:function(bla, error, errortext){
+				$('#error').html("Oops! Something went wrong." + error + " " + errortext);
 				$('#error').show();
 				console.log("ajax error when toggling user active");
 			},
