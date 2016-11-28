@@ -17,8 +17,11 @@ if($conn->connectToDatabase()){
     case "deactivateUser":
       echo json_encode(array("success"=> 'Deactivating User'));
       break;
-    case "toggleAdmin":
-      echo json_encode(array("success"=> 'Toggling Admin'));
+    case "adminify":
+      echo json_encode(array("success"=> 'Making user into Admin'));
+      break;
+    case "deadminify":
+      echo json_encode(array("success"=> 'Making user into normal user'));
       break;
     default:
       echo json_encode(array("error"=> 'Action requested is not clear. '.$_POST['action']));
