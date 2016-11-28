@@ -18,16 +18,36 @@ if($conn->connectToDatabase()){
       }
       break;
     case "activateUser":
-      echo json_encode(array("success"=> 'Activating User'));
+      $q = "UPDATE db.user SET activeuserflag = 1 where id = ?";
+      if($conn->update($q, '', $_POST['id'])){
+        echo json_encode(array("success"=> 'User activated'));
+      } else {
+        echo json_encode(array("error"=> 'User activation failed'));
+      }
       break;
     case "deactivateUser":
-      echo json_encode(array("success"=> 'Deactivating User'));
+      $q = "UPDATE db.user SET activeuserflag = 0 where id = ?";
+      if($conn->update($q, '', $_POST['id'])){
+        echo json_encode(array("success"=> 'User deactivated'));
+      } else {
+        echo json_encode(array("error"=> 'User deactivation failed'));
+      }
       break;
     case "adminify":
-      echo json_encode(array("success"=> 'Making user into Admin'));
+      $q = "UPDATE db.user SET isadmin = 1 where id = ?";
+      if($conn->update($q, '', $_POST['id'])){
+        echo json_encode(array("success"=> 'User is now an admin'));
+      } else {
+        echo json_encode(array("error"=> 'Adminification failed'));
+      }
       break;
     case "deadminify":
-      echo json_encode(array("success"=> 'Making user into normal user'));
+      $q = "UPDATE db.user SET isadmin = 0 where id = ?";
+      if($conn->update($q, '', $_POST['id'])){
+        echo json_encode(array("success"=> 'User is no longer an admin'));
+      } else {
+        echo json_encode(array("error"=> 'De-admnification failed'));
+      }
       break;
     default:
       echo json_encode(array("error"=> 'Action requested is not clear. '.$_POST['action']));
