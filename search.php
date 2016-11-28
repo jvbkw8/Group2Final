@@ -6,6 +6,26 @@ $username = "root";
 $password = "";
 $dbname = "db";
 ?>
+
+<?php
+//gets file id via post from search screen table and deletes data
+//nathan hensel
+if(isset($_POST['deleteid'])
+	{
+	$db_link = new mysqli('localhost', 'root', '', 'db');
+	$query = "delete from files where id={$_POST["deleteid"]};" or die('Error, query failed');;
+	$result = mysqli_query($db_link, $query);
+
+	mysqli_close($db_link);
+
+	header( 'Location: /Group2Final/search.php' ) ;
+	exit();
+	}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -91,7 +111,7 @@ tr:nth-child(even) {
 			{
 			if ($row["owner"] == $_SESSION['NAME'])
 				{
-				echo "<tr><td>{$row["name"]}</td><td>{$row["id"]}</td><td><form action='delete.php' method='post'><button type='submit' name='id' value={$row["id"]} class='btn btn-info'>Delete</button></form></td><td><a href='download.php?id={$row["id"]}' class='btn btn-info' type='submit' name='' value='download'>Download</a></td><td><a href='dosomethingelse.php' class='btn btn-info' type='submit' name='' value=''>View</a></td></tr>";
+				echo "<tr><td>{$row["name"]}</td><td>{$row["id"]}</td><td><form action='search.php' method='post'><button type='submit' name='id' value={$row["id"]} class='btn btn-info'>Delete</button></form></td><td><a href='download.php?id={$row["id"]}' class='btn btn-info' type='submit' name='' value='download'>Download</a></td><td><a href='dosomethingelse.php' class='btn btn-info' type='submit' name='' value=''>View</a></td></tr>";
 				}
 			else
 				{
