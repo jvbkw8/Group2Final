@@ -10,7 +10,7 @@ $dbname = "db";
 <?php
 //gets file id via post from search screen table and deletes data
 //nathan hensel
-if(isset($_POST['deleteid'])
+if(isset($_POST['deleteid']))
 	{
 	$db_link = new mysqli('localhost', 'root', '', 'db');
 	$query = "delete from files where id={$_POST["deleteid"]};" or die('Error, query failed');;
