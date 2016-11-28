@@ -33,8 +33,8 @@ input[type=checkbox]:checked + label {
 <?php
 	include "header.php";
 ?>
-<div id="error" class="alert alert-danger" style="display:none"></div>
-<div id="success" class="alert alert-success" style="display:none"></div>
+<div id="error" class="alert alert-danger" style="display:none"><?php echo $_GET['error']?></div>
+<div id="success" class="alert alert-success" style="display:none"><?php echo $_GET['success']?></div>
 <div class="container">
 <?php
 	require_once "DBConn.php";
@@ -78,16 +78,31 @@ input[type=checkbox]:checked + label {
 ?>
 </div>
 <script>
+	<?php
+	if(isset($_GET['error'])){
+		?>
+		$('#error').show();
+		setTimeout(function(){
+			$("#error").fadeOut(1000);
+		}, 7000);
+		<?php
+	}
+	if(isset($_GET['success'])){
+		?>
+		setTimeout(function(){
+			$("#success").fadeOut(1000);
+		}, 7000);
+		<?php
+	}
+	?>
 	var timeout;
 	function toggleUserActive(id){
 		if($('#'+id+'_active').html() == "Activate"){
 			var action = "activateUser";
-			var newButtonText = "Deactivate";
 		} else {
 			var action = "deactivateUser";
-			var newButtonText = "Activate";
 		}
-		editUser(id, action, id+"_active", newButtonText);
+		editUser(id, action);
 	}
 	
 	function resetPassword(id){
@@ -97,44 +112,36 @@ input[type=checkbox]:checked + label {
 	function toggleUserAdmin(id){
 		if($('#'+id+"_admin").html() == "Adminify"){
 			var action = "adminify";
-			var newButtonText = "De-adminify";
 		} else {
 			var action = "deadminify";
-			var newButtonText = "Adminify";
 		}
-		editUser(id, action, id+"_admin", newButtonText);
+		editUser(id, action);
 	}
 	
-	function editUser(id, action, buttonToChange, newButtonText){
+	function editUser(id, action){
 		$.ajax({
 			url:"editUser.php",
 			method:"POST",
 			data:{id:id, action:action},
 			success:function(html){
 				if(html.error){
-					$("#error").html(html.error);
-					$('#error').show();
+// 					$("#error").html(html.error);
+// 					$('#error').show();
+					locaton.replace("account.php?error="+html.error);
 				}
 				if(html.success){
-					$('#success').html(html.success);
-					$('#success').show();
+// 					$('#success').html(html.success);
+// 					$('#success').show();
+					location.replace("account.php?success="+html.success);
 				}
 			},
 			error:function(bla, error, errortext){
-				$('#error').html("Oops! Something went wrong.");
-				$('#error').show();
-				console.log("ajax error when toggling user active. " + error + " " + errortext);
+// 				$('#error').html("Oops! Something went wrong.");
+// 				$('#error').show();
+				location.replace("account.php?error=Oops! Something went wrong.");
+// 				console.log("ajax error when toggling user active. " + error + " " + errortext);
 			},
 		});
-		console.log(timeout);
-		if(typeof timeout != "undefined"){
-			console.log("clearing timeout");
-			window.clearTimeout(timeout);
-		}
-		timeout = setTimeout(function(){
-			$("#error").fadeOut(1000);
-			$("#success").fadeOut(1000);
-		}, 7000);
 	}
 </script>
 </body>
