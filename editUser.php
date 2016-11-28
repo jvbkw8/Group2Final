@@ -21,7 +21,7 @@ if($conn->connectToDatabase()){
       echo json_encode(array("success"=> 'Toggling Admin'));
       break;
     default:
-      echo json_encode(array("error"=> 'Action requested is not clear. ".$_POST['action']."'"));
+      echo json_encode(array("error"=> 'Action requested is not clear. '.$_POST['action']));
   }
 } else {
   echo json_encode(array("error"=> 'Could not connect. Try again later'));
