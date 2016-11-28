@@ -125,8 +125,10 @@ input[type=checkbox]:checked + label {
 				console.log("ajax error when toggling user active. " + error + " " + errortext);
 			},
 		});
+		console.log(timeout);
 		if(timeout){
-			clearTimeout(timeout);
+			console.log("clearing timeout");
+			window.clearTimeout(timeout);
 		}
 		var timeout = setTimeout(function(){
 			$("#error").fadeOut(1000);
