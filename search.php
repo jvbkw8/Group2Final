@@ -87,12 +87,18 @@ tr:nth-child(even) {
 	echo "</tr>";
 
 	//data  
-                     while ($row = mysqli_fetch_assoc($result))  {
-                      echo "<tr><td>{$row["name"]}</td><td>{$row["id"]}</td><td>someone</td><td><a href='dosomething.php' class='btn btn-info' type='submit' name='' value='download'>Download</a></td><td><a href='dosomethingelse.php' class='btn btn-info' type='submit' name='' value=''>View</a></td></tr>";
-                      //echo "<td>{$row[1]}</td>";
-                      //echo "<td>{$row[6]}</td>";
-                      //echo "<td>{$row[7]}</td></tr>";
-                    } 
+                     while ($row = mysqli_fetch_assoc($result))
+			{
+			if ($row["owner"] == $_SESSION['NAME'])
+				{
+				echo "<tr><td>{$row["name"]}</td><td>{$row["id"]}</td><td><a href='deleteFile.php' class='btn btn-info' type='submit' name='' value='download'>Delete</a</td><td><a href='download.php?id={$row["id"]}' class='btn btn-info' type='submit' name='' value='download'>Download</a></td><td><a href='dosomethingelse.php' class='btn btn-info' type='submit' name='' value=''>View</a></td></tr>";
+				}
+			else
+				{
+				echo "<tr><td>{$row["name"]}</td><td>{$row["id"]}</td><td>{$row["owner"]}</td><td><a href='download.php?id={$row["id"]}' class='btn btn-info' type='submit' name='' value='download'>Download</a></td><td><a href='dosomethingelse.php' class='btn btn-info' type='submit' name='' value=''>View</a></td></tr>";
+				}
+
+                    	} 
 
                     echo "</table>";
             }
