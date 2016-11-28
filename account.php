@@ -78,6 +78,7 @@ input[type=checkbox]:checked + label {
 ?>
 </div>
 <script>
+	var timeout;
 	function toggleUserActive(id){
 		if($('#'+id+'_active').html() == "Activate"){
 			var action = "activateUser";
@@ -126,7 +127,7 @@ input[type=checkbox]:checked + label {
 			},
 		});
 		console.log(timeout);
-		if(timeout){
+		if(typeof timeout != "undefined"){
 			console.log("clearing timeout");
 			window.clearTimeout(timeout);
 		}
