@@ -1,6 +1,6 @@
 <?php
 if(!isset($_POST['id']) || !isset($_POST['action'])){
-  echo "{error: 'Required data not sent'}";
+  echo json_encode(array("error"=>'Required data not sent'));
   exit();
 }
 header("Content-Type: application/json");
@@ -9,21 +9,21 @@ $conn = new DBConn();
 if($conn->connectToDatabase()){
   switch($_POST['action']){
     case "resetPassword":
-      echo "{success: 'Resetting Password'}";
+      echo json_encode(array("success"=> 'Resetting Password'));
       break;
     case "activateUser":
-      echo "{success: 'Activating User'}";
+      echo json_encode(array("success"=> 'Activating User'));
       break;
     case "deactivateUser":
-      echo "{success: 'Deactivating User'}";
+      echo json_encode(array("success"=> 'Deactivating User'));
       break;
     case "toggleAdmin":
-      echo "{success: 'Toggling Admin'}";
+      echo json_encode(array("success"=> 'Toggling Admin'));
       break;
     default:
-      echo "{error: 'Action requested is not clear. ".$_POST['action']."}";
+      echo json_encode(array("error"=> 'Action requested is not clear. ".$_POST['action']."'"));
   }
 } else {
-  echo "{error: 'Could not connect. Try again later'}";
+  echo json_encode(array("error"=> 'Could not connect. Try again later'));
 }
 ?>
