@@ -9,7 +9,13 @@ $conn = new DBConn();
 if($conn->connectToDatabase()){
   switch($_POST['action']){
     case "resetPassword":
-      echo json_encode(array("success"=> 'Resetting Password'));
+      $newPassword = password_hash("password123", PASSWORD_DEFAULT);
+      $q = "UPDATE db.user SET hashedpassword = ? where id = ?";
+      if($conn->update($q, $newPassword, $_POST['id'])){
+        echo json_encode(array("success"=> 'Password is now password123'));        
+      } else {
+        echo json_encode(array("error"=> 'Password not reset'));
+      }
       break;
     case "activateUser":
       echo json_encode(array("success"=> 'Activating User'));
