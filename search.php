@@ -78,7 +78,7 @@ tr:nth-child(even) {
 					</div>
 					<br>
 					<div class="row form-group">
-					  <a href="search.php" method="post" class=" btn btn-info" type="submit" name="searchname" value="login">Search</a>
+					  <a href="search.php" class=" btn btn-info" type="submit" name="searchname" value="login">Search</a>
 					</div>
 				</form>
 				<form action="/search.php" method="post">
@@ -91,7 +91,7 @@ tr:nth-child(even) {
 					</div>
 					<br>
 					<div class="row form-group">
-					  <a href="search.php" method="post" class=" btn btn-info" type="submit" name="searchowner" value="login">Search</a>
+					  <a href="search.php" class=" btn btn-info" type="submit" name="searchowner" value="login">Search</a>
 					</div>
 				</form>
 			</div>
