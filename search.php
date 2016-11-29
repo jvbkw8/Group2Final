@@ -78,7 +78,7 @@ tr:nth-child(even) {
 					</div>
 					<br>
 					<div class="row form-group">
-					  <input type="submit">
+					  <input type="submit" value="Search" class="btn btn-info">
 					</div>
 				</form>
 				<form action="/Group2Final/search.php" method="post">
@@ -91,7 +91,7 @@ tr:nth-child(even) {
 					</div>
 					<br>
 					<div class="row form-group">
-					  <input type="submit">
+					  <input type="submit" value="Search" class="btn btn-info">
 					</div>
 				</form>
 			</div>
