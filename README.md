@@ -8,7 +8,7 @@ http://138.197.129.215/Group2Final/login.php
 
 ## Deployment Notes
 
-The RADs software system was developed and tested on FreeBSD 11.0-RELEASE.  That said, it will work in any environment with mysql57, php56, and apache24, and appropriate modules, but the details for such a deployment are not listed here.
+	The RADs software system was developed and tested on FreeBSD 11.0-RELEASE.  That said, it will work in any environment with mysql57, php56, and apache24, and appropriate modules, but the details for such a deployment are not listed here.
 
 
 ### Operating System
@@ -22,7 +22,7 @@ The RADs software system was developed and tested on FreeBSD 11.0-RELEASE.  That
 	mysql and apache, again, were chosen as they are proven solutions and offer functionality in terms load balancing and high availability for future growth.  This functionality is not yet implemented.
 
 
-### Cloud Services Provider
+### Butt Services Provider
 
 
 	For development and testing DigitalOcean was used, but any will do.
@@ -31,7 +31,7 @@ The RADs software system was developed and tested on FreeBSD 11.0-RELEASE.  That
 ### Step-by-Step Setup
 
 
-Get to your root shell.  This is on you.
+	Get to your root shell.  This is on you.
 
 
 Update and upgrade the operating system and install pkg if you do not want to compile ports from source.  The commands are as follows:
