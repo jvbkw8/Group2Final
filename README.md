@@ -4,29 +4,31 @@ Repository for Group 2 of the Final Project
 # Link to Deployment:
 http://138.197.129.215/Group2Final/login.php
 
-# Deployment Notes
+
+
+## Deployment Notes
 
 The RADs software system was developed and tested on FreeBSD 11.0-RELEASE.  That said, it will work in any environment with mysql57, php56, and apache24, and appropriate modules, but the details for such a deployment are not listed here.
 
 
-# Operating System
+### Operating System
 
 
 	FreeBSD was chosen for its reliability, security, and predictability in updates and releases.  It is a proven solution as shown by its use by companies such as Netflix and Yahoo, incidentally accounting for more than a third of all internet traffic in 2015 in north america. (www.applieinsider.com) 
 
-# Database and Webserver
+### Database and Webserver
 
 
 	mysql and apache, again, were chosen as they are proven solutions and offer functionality in terms load balancing and high availability for future growth.  This functionality is not yet implemented.
 
 
-# Cloud Services Provider
+### Cloud Services Provider
 
 
 	For development and testing DigitalOcean was used, but any will do.
 
 
-# Step-by-Step Setup
+### Step-by-Step Setup
 
 
 Get to your root shell.  This is on you.
