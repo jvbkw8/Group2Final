@@ -72,26 +72,26 @@ tr:nth-child(even) {
 					<div class="form-group row">
 					  <label for="example-first-input" class="col-xs-2 col-form-label">By filename:</label>
 					  <div class="col-xs-10">
-					  <input class="form-control" type="text" placeholder="" id="filename">
+					  <input class="form-control" type="text" placeholder="" id="searchname">
 					  <br>
 					  </div>
 					</div>
 					<br>
 					<div class="row form-group">
-					  <a href="search.php" class=" btn btn-info" type="submit" name="searchname" value="login">Search</a>
+					  <input type="submit">
 					</div>
 				</form>
 				<form action="/search.php" method="post">
 					<div class="form-group row">
 					  <label for="example-first-input" class="col-xs-2 col-form-label">By Username:</label>
 					  <div class="col-xs-10">
-					  <input class="form-control" type="text" placeholder="" id="username">
+					  <input class="form-control" type="text" placeholder="" id="searchowner">
 					  <br>
 					  </div>
 					</div>
 					<br>
 					<div class="row form-group">
-					  <a href="search.php" class=" btn btn-info" type="submit" name="searchowner" value="login">Search</a>
+					  <input type="submit">
 					</div>
 				</form>
 			</div>
