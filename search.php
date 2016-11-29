@@ -106,7 +106,7 @@ tr:nth-child(even) {
 		}
 	elseif(isset($_POST['searchname']))
 		{
-		$query = "select * from files where owner='{$_POST["searchname"]}';";
+		$query = "select * from files where name='{$_POST["searchname"]}';";
 		}
 	else
 		{
