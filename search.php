@@ -68,7 +68,7 @@ tr:nth-child(even) {
 			<div class="col-md-12 col-sm-10 col-xs-310"></div>
 			<div class="col-md-8 col-sm-10 col-xs-10">
 				<h2></h2>
-				<form action="<?=$_SERVER['PHP_SELF']?>" method="GET">
+				<form action="/search.php" method="post">
 					<div class="form-group row">
 					  <label for="example-first-input" class="col-xs-2 col-form-label">By filename:</label>
 					  <div class="col-xs-10">
@@ -76,16 +76,22 @@ tr:nth-child(even) {
 					  <br>
 					  </div>
 					</div>
-					<div class="form-group row">
-						<label for="example-last-input" class="col-xs-2 col-form-label">By Username: </label>
-						<div class="col-xs-10">
-							<input class="form-control" type="text" placeholder="" id="byname">
-							<br>
+					<br>
+					<div class="row form-group">
+					  <a href="search.php" method="post" class=" btn btn-info" type="submit" name="searchname" value="login">Search</a>
 					</div>
+				</form>
+				<form action="/search.php" method="post">
+					<div class="form-group row">
+					  <label for="example-first-input" class="col-xs-2 col-form-label">By Username:</label>
+					  <div class="col-xs-10">
+					  <input class="form-control" type="text" placeholder="" id="username">
+					  <br>
+					  </div>
 					</div>
 					<br>
 					<div class="row form-group">
-					  <a href="searchResult.php" class=" btn btn-info" type="submit" name="" value="login">Search</a>
+					  <a href="search.php" method="post" class=" btn btn-info" type="submit" name="searchuser" value="login">Search</a>
 					</div>
 				</form>
 			</div>
@@ -93,7 +99,20 @@ tr:nth-child(even) {
 <?php
 //This block gets all the files and constructs a table.  more to come
 	$db_link = new mysqli('localhost', 'root', '', 'db');
-	$query = "select * from files;";
+
+	if(isset($_POST['searchowner']))
+		{
+		$query = "select * from files where owner={$_POST["searchowner"]};";
+		}
+	else if(isset($_POST['searchname']))
+		{
+		$query = "select * from files where owner={$_POST["searchname"]};";
+		}
+	else
+		{
+		$query = "select * from files;";
+		}
+
 	if ($result = mysqli_query($db_link, $query)){
 
 	echo "<table>";
