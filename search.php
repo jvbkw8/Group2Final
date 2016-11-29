@@ -68,7 +68,7 @@ tr:nth-child(even) {
 			<div class="col-md-12 col-sm-10 col-xs-310"></div>
 			<div class="col-md-8 col-sm-10 col-xs-10">
 				<h2></h2>
-				<form action="/search.php" method="post">
+				<form action="/Group2Final/search.php" method="post">
 					<div class="form-group row">
 					  <label for="example-first-input" class="col-xs-2 col-form-label">By filename:</label>
 					  <div class="col-xs-10">
@@ -81,7 +81,7 @@ tr:nth-child(even) {
 					  <input type="submit">
 					</div>
 				</form>
-				<form action="/search.php" method="post">
+				<form action="/Group2Final/search.php" method="post">
 					<div class="form-group row">
 					  <label for="example-first-input" class="col-xs-2 col-form-label">By Username:</label>
 					  <div class="col-xs-10">
