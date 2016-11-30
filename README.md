@@ -42,7 +42,7 @@ Update and upgrade the operating system and install pkg if you do not want to co
 	pkg update
 	pkg upgrade
 
-To at any time se what installed:
+To at any time see what installed:
 
 	pkg info
 
