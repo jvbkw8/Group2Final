@@ -85,3 +85,6 @@ On the first start of mysql, it creates the hidden file in root’s home directo
 Log into the mysql shell with “ mysql -u root -p ”.  Enter or paste the password from before.  Now you may, and should, choose to change the password.  Create a database “db” and source the .sql provided in the github repository.  The default credentials in the application for testing are “root”:””
 
 Navigate to /usr/local/www/apache24/data/ and git clone the github repository.  The application will now be running.
+
+	cd /usr/local/www/apache24/data/
+	git clone https://github.com/jvbkw8/Group2Final.git
