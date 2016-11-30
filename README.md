@@ -52,7 +52,9 @@ Services in FreeBSD are started and stopped like in post-systemd linux.  For exa
 Add “ apache24_enable=”YES” “ to /etc/rc.conf
 Add “ mysql_enable=”YES” “ to /etc/rc.conf
 You will now be able to start the services, or reboot to start the services.
-Run “ cp /usr/local/etc/php.ini-production /usr/local/etc/php.ini “ to create a php config file
+Run to create a php config file:
+
+	cp /usr/local/etc/php.ini-production /usr/local/etc/php.ini
 
 
 Add php functionality to apache configuration
