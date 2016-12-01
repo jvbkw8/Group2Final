@@ -22,7 +22,7 @@ http://138.197.129.215/Group2Final/login.php
    mysql and apache, again, were chosen as they are proven solutions and offer functionality in terms load balancing and high availability for future growth.  This functionality is not yet implemented.
 
 
-### Butt Services Provider
+### Cloud Services Provider
 
 
    For development and testing DigitalOcean was used, but any will do.
