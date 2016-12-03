@@ -65,8 +65,7 @@ tr:nth-child(even) {
 
 <div class="container">
 		<div class="row">
-			<div class="col-md-12 col-sm-10 col-xs-310"></div>
-			<div class="col-md-8 col-sm-10 col-xs-10">
+			<div class="col-md-4 col-sm-10 col-xs-10">
 				<h2></h2>
 				<form action="/Group2Final/search.php" method="post">
 					<div class="form-group row">
@@ -95,7 +94,7 @@ tr:nth-child(even) {
 					</div>
 				</form>
 			</div>
-		</div>
+			<div class="col-md-8 col-sm-10 col-xs-10">
 <?php
 //This block gets all the files and constructs a table.  more to come
 	$db_link = new mysqli('localhost', 'root', '', 'db');
@@ -147,8 +146,8 @@ tr:nth-child(even) {
 ?>
 
 
-
-
+			</div>
+		</div>
 
 
 
