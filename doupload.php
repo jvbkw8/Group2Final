@@ -19,7 +19,8 @@ if ($conn->connect_error) {
 $max_file_size = 1024*10000; //1mb?
 
 
-
+$numFilesNotUploaded = 0;
+$error = array();
 if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 	
 	//set manifest name for all
@@ -28,12 +29,14 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 	//insert manifest name and get its id
 	$stmt = $conn->prepare("INSERT INTO manifest(name) VALUES (?)");
 	$stmt->bind_param("s", $manifestname);	
-	$stmt->execute();
+	if(!$stmt->execute()){
+		$error[] = "Manifest name not stored.";
+		break;
+	}
 	$manifestid = mysqli_insert_id($conn);
 	
 	// for each file
 	foreach ($_FILES['files']['name'] as $f => $name) {
-		
 	//echo $name;
 	//echo "<br>";
 	//continue;
@@ -43,7 +46,7 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 	    }	       
 	    if ($_FILES['files']['error'][$f] == 0) {	           
 	        if ($_FILES['files']['size'][$f] > $max_file_size) {
-	            $message[] = "$name is too large!.";
+	            $error[] = "$name is too large!.";
 	            continue; // Skip large files
 	        }
 
@@ -51,23 +54,38 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 			//for each file do these things
 			$binaryData = file_get_contents($_FILES['files']['tmp_name'][$f]);
 			$owner = $_SESSION['NAME'];
-			$null = NULL;
-			
-
-			
-			
+			$null = NULL; //this made it all work
 			
 			// prepare and bind
-			$stmt = $conn->prepare("INSERT INTO files (data,name,owner, manifestid) VALUES (?, ?, ?, ?)");
+			//$stmt = $conn->prepare("INSERT INTO files (data, name, owner, manifestid) VALUES (?, ?, ?, ?)");
+			$stmt = $conn->prepare("INSERT into files (data, nam, owner, manifestid) VALUES(?, ?, ?, ?)");
 			$stmt->bind_param("bssi", $null,  $name, $owner, $manifestid);
 			$stmt->send_long_data(0, $binaryData);	//this made it all work	
-			$stmt->execute();
+			if(!$stmt->execute()){
+				$numFilesNotUploaded++;
+			}
 	        }
 	    }
 	}
+} else {
+	$error = "No files uploaded.";
+}
+if($numFilesNotUploaded > 0){
+	$plural = ($numFilesNotUploaded > 1)? "s":"";
+	$error[] = $numFilesNotUploaded." file".$plural." not uploaded.";
+}
+foreach($error as $msg){
+	$errorMsg .= $msg."<br>";	
+}
+if(isset($errorMsg)){
+	$errorMsg = rtrim($errorMsg, "<br>");
 }
 
 $stmt->close();
 $conn->close();
-header( 'Location: /Group2Final/upload.php' ) ;
+if(isset($errorMsg)){
+	header( 'Location: /Group2Final/upload.php?error='.$errorMsg ) ;
+}else{
+	header('Location: /Group2Final/upload.php');
+}
 ?>
