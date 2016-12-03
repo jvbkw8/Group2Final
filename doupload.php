@@ -35,12 +35,18 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 			$binaryData = file_get_contents($_FILES['files']['tmp_name'][$f]);
 			$owner = $_SESSION['NAME'];
 			$null = NULL;
-			// prepare and bind
-			$stmt = $conn->prepare("INSERT INTO files (data,name,owner) VALUES (?, ?, ?)");
-			$stmt->bind_param("bss", $null,  $name, $owner);
 			
-			$stmt->send_long_data(0, $binaryData);	//this made it all work
-				
+			//insert manifest name and get its id
+			$stmt = $conn->prepare("INSERT INTO manifest(name) VALUES (?)");
+			$stmt->bind_param("s", $name);	
+			$stmt->execute();
+			
+			$manifestid = mysqli_insert_id($conn);
+			
+			// prepare and bind
+			$stmt = $conn->prepare("INSERT INTO files (data,name,owner, manifestid) VALUES (?, ?, ?, ?)");
+			$stmt->bind_param("bssi", $null,  $name, $owner, $manifestid);
+			$stmt->send_long_data(0, $binaryData);	//this made it all work	
 			$stmt->execute();
 	        }
 	    }
