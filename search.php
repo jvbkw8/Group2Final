@@ -106,19 +106,19 @@ tr:nth-child(even) {
 
 	if(isset($_POST['searchowner']))
 		{
-		$query = "select files.*, manifest.name as manifestname from files inner join manifest on files.manifestid = manifest.id where owner LIKE '%{$_POST["searchowner"]}%';";
+		$query = "select files.*, manifest.name as manifestname from files left join manifest on files.manifestid = manifest.id where owner LIKE '%{$_POST["searchowner"]}%';";
 		}
 	elseif(isset($_POST['searchname']))
 		{
-		$query = "select files.*, manifest.name as manifestname from files inner join manifest on files.manifestid = manifest.id where files.name LIKE '%{$_POST["searchname"]}%';";
+		$query = "select files.*, manifest.name as manifestname from files left join manifest on files.manifestid = manifest.id where files.name LIKE '%{$_POST["searchname"]}%';";
 		}
 	elseif(isset($_POST['searchmanifest']))
 		{
-		$query = "select files.*, manifest.name as manifestname from manifest inner join files on manifest.id = files.manifestid where manifest.name LIKE '%{$_POST["searchmanifest"]}%';";
+		$query = "select files.*, manifest.name as manifestname from files left join manifest on manifest.id = files.manifestid where manifest.name LIKE '%{$_POST["searchmanifest"]}%';";
 		}
 	else
 		{
-		$query = "select files.*, manifest.name as manifestname from files inner join manifest on manifest.id = files.manifestid;";
+		$query = "select files.*, manifest.name as manifestname from files left join manifest on manifest.id = files.manifestid;";
 		}
 
 	if ($result = mysqli_query($db_link, $query)){
