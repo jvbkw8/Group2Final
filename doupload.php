@@ -29,14 +29,14 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 	$stmt = $conn->prepare("INSERT INTO manifest(name) VALUES (?)");
 	$stmt->bind_param("s", $manifestname);	
 	$stmt->execute();
-	
+	$manifestid = mysqli_insert_id($conn);
 	
 	// for each file
 	foreach ($_FILES['files']['name'] as $f => $name) {
 		
-	echo $name;
-	echo "<br>";
-	continue;
+	//echo $name;
+	//echo "<br>";
+	//continue;
 		
 	    if ($_FILES['files']['error'][$f] == 4) {
 	        continue; // Skip file if any error found
@@ -55,7 +55,7 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 			
 
 			
-			$manifestid = mysqli_insert_id($conn);
+			
 			
 			// prepare and bind
 			$stmt = $conn->prepare("INSERT INTO files (data,name,owner, manifestid) VALUES (?, ?, ?, ?)");
@@ -69,5 +69,5 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 
 $stmt->close();
 $conn->close();
-//header( 'Location: /Group2Final/upload.php' ) ;
+header( 'Location: /Group2Final/upload.php' ) ;
 ?>
