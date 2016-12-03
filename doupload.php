@@ -69,5 +69,5 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 
 $stmt->close();
 $conn->close();
-header( 'Location: /Group2Final/upload.php' ) ;
+//header( 'Location: /Group2Final/upload.php' ) ;
 ?>
