@@ -102,7 +102,7 @@ $stmt->close();
 $conn->close();
 if(isset($errorMsg)){
 	header( 'Location: /Group2Final/upload.php?error='.$errorMsg ) ;
-}else if{
+}else{
 	header('Location: /Group2Final/upload.php?success='.$numFilesUploaded);
 }
 ?>
