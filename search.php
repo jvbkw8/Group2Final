@@ -143,7 +143,7 @@ tr:nth-child(even) {
 					<td><?php echo {$row["name"]};?></td>
 					<td></td>
 					<td><a href='download.php?id=<?php echo {$row["id"]};?>' class='btn btn-info' type='submit' name='' value='download'>Download</a></td>
-					<td><form action='search.php' method='post'><button name='manifestname' class='btn btn-info' type='submit' value='<?php echo $row['manifestname'];?>'>View This Manifest</button></td>
+					<td><form action='search.php' method='post'><button name='manifestname' class='btn btn-info' type='submit' value='<?php echo $row['manifestname'];?>'>View This Manifest</button></form></td>
 					<td><?php echo $manifestname;?></td>
 					<?php
 			     		if($row["owner"] == $_SESSION['NAME'] || (isset($_SESSION['ADMIN']) && $_SESSION['ADMIN'] == 1)){
