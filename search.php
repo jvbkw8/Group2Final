@@ -153,7 +153,7 @@ tr:nth-child(even) {
 					<?php
 				} else {
 					?>
-					<td></td>
+					<td>You Are Not The Owner</td>
 					<?php
 				}
 			?>
