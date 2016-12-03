@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 }
 
 
-$max_file_size = 1024*10000; //1mb?
+$max_file_size = 1024000*10000; //1mb?
 
 
 $numFilesNotUploaded = 0;
