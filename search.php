@@ -96,11 +96,11 @@ tr:nth-child(even) {
 
 	if(isset($_POST['searchowner']))
 		{
-		$query = "select * from files where owner='{$_POST["searchowner"]}';";
+		$query = "select * from files where owner LIKE '%{$_POST["searchowner"]}%';";
 		}
 	elseif(isset($_POST['searchname']))
 		{
-		$query = "select * from files where name='{$_POST["searchname"]}';";
+		$query = "select * from files where name LIKE '%{$_POST["searchname"]}%';";
 		}
 	else
 		{
