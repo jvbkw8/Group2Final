@@ -21,19 +21,23 @@ include "security.php";
 <br>
 <br>
 <?php
+	$s = "";	//for plural files
 	if (isset ($_GET["error"]))
 		{
 		echo '<div class="alert alert-danger" id="alertbad">';
 		echo '<strong>Success!</strong> {$_GET["error"]}.';
 		echo '</div>';
 		}
-	else
+	else if (isset ($_GET["success"]))
 		{
+		if ($_GET["success"] >= 1)
+			{
+			$s = "s";	//if plural
+			}
 		echo '<div class="alert alert-success" id="alertgood">';
-		echo '<strong>Success!</strong> All files uploaded.';
+		echo '<strong>Success!</strong> {$_GET["success"]} file{$s} uploaded.';
 		echo '</div>';
-		}	
-		
+		}
 		
 ?>
 	
