@@ -23,7 +23,7 @@ include "security.php";
 <br>
 <div class="container">
   <form action="doupload.php" method="post" enctype="multipart/form-data" onsubmit="return checkForm(this)";>
-    <input type="file" id="file" name="files[]" multiple="multiple" />
+    <input type="file" id="file" name="files[]" multiple="multiple" minFiles="1" />
     <br>
     Manifest Name:
     <br>
@@ -45,7 +45,7 @@ include "security.php";
 	form.inputfield.focus();
 	return false;
     }
-   if(form.file[0].value == "")
+   if(form.file.value == "")
    	{
 	alert("Error: Input is empty!");
 	form.inputfield.focus();
