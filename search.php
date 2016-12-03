@@ -106,7 +106,7 @@ tr:nth-child(even) {
 
 	if ($result = mysqli_query($db_link, $query)){
 
-	echo "<table>";
+	echo "<table style="width:40%">";
     	//header
 	echo "<tr>";
 	echo "<th>File Name</th>";
