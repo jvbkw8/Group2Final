@@ -20,6 +20,7 @@ $max_file_size = 1024*10000; //1mb?
 
 
 $numFilesNotUploaded = 0;
+$numFilesUploaded;
 $error = array();
 if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 	
@@ -63,6 +64,8 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 			$stmt->send_long_data(0, $binaryData);	//this made it all work	
 			if(!$stmt->execute()){
 				$numFilesNotUploaded++;
+			} else {
+				$numFilesUploaded++;
 			}
 	        }
 	    }
@@ -86,6 +89,6 @@ $conn->close();
 if(isset($errorMsg)){
 	header( 'Location: /Group2Final/upload.php?error='.$errorMsg ) ;
 }else{
-	header('Location: /Group2Final/upload.php');
+	header('Location: /Group2Final/upload.php?success='.$numFilesUploaded);
 }
 ?>
