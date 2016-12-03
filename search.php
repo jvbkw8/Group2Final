@@ -48,7 +48,7 @@ table {
 }
 
 td, th {
-    border: 1px solid #83f390;
+    border: 1px solid #2b9236;
     text-align: left;
     padding: 8px;
 }
