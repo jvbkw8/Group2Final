@@ -68,7 +68,7 @@ tr:nth-child(even) {
 			<div class="col-md-6 col-sm-10 col-xs-10">
 				<div class="col-md-5">
 				<form action="/Group2Final/search.php" method="post">				
-					  <label for="example-first-input" class=" col-form-label">By filename:</label>			 
+					  <label for="example-first-input" class=" col-form-label">By Filename:</label>			 
 					  <br>
 					  <input class="form-control" type="text" placeholder="" name="searchname" value="<?php if(isset($_POST['searchname'])){echo $_POST['searchname'];}?>">
 					  <br>
@@ -90,7 +90,7 @@ tr:nth-child(even) {
 				<br>
 				<br>
 				<form action="/Group2Final/search.php" method="post">
-					  <label for="example-first-input" class="col-form-label">By Manifeset:</label>
+					  <label for="example-first-input" class="col-form-label">By Manifest:</label>
 					  <br>						  
 					  <input class="form-control" type="text" placeholder="" name="searchmanifest" value="<?php if(isset($_POST['searchmanifest'])){echo $_POST['searchmanifest'];}?>">
 					  <br>
@@ -106,15 +106,19 @@ tr:nth-child(even) {
 
 	if(isset($_POST['searchowner']))
 		{
-		$query = "select * from files where owner LIKE '%{$_POST["searchowner"]}%';";
+		$query = "select files.*, manifest.name as manifestname from files inner join manifest on files.manifestid = manifest.id where owner LIKE '%{$_POST["searchowner"]}%';";
 		}
 	elseif(isset($_POST['searchname']))
 		{
-		$query = "select * from files where name LIKE '%{$_POST["searchname"]}%';";
+		$query = "select files.*, manifest.name as manifestname from files inner join manifest on files.manifestid = manifest.id where files.name LIKE '%{$_POST["searchname"]}%';";
+		}
+	elseif(isset($_POST['searchmanifest']))
+		{
+		$query = "select files.*, manifest.name as manifestname from manifest inner join files on manifest.id = files.manifestid where manifest.name LIKE '%{$_POST["searchmanifest"]}%';";
 		}
 	else
 		{
-		$query = "select * from files;";
+		$query = "select files.*, manifest.name as manifestname from files inner join manifest on manifest.id = files.mannifestid;";
 		}
 
 	if ($result = mysqli_query($db_link, $query)){
@@ -127,6 +131,7 @@ tr:nth-child(even) {
 	echo "<th>Owner</th>";
 	echo "<th>Get File</th>";
 	echo "<th>View Manifest</th>";
+	echo "<th>Manifest Name</th>";
 	echo "</tr>";
 
 	//data  
@@ -134,7 +139,7 @@ tr:nth-child(even) {
 			{
 			if ($row["owner"] == $_SESSION['NAME'])
 				{
-				echo "<tr><td>{$row["name"]}</td><td><form action='search.php' method='post'><button type='submit' name='deleteid' value={$row["id"]} class='btn btn-info'>Delete</button></form></td><td><a href='download.php?id={$row["id"]}' class='btn btn-info' type='submit' name='' value='download'>Download</a></td><td><a href='dosomethingelse.php' class='btn btn-info' type='submit' name='' value=''>View</a></td></tr>";
+				echo "<tr><td>{$row["name"]}</td><td><form action='search.php' method='post'><button type='submit' name='deleteid' value={$row["id"]} class='btn btn-info'>Delete</button></form></td><td><a href='download.php?id={$row["id"]}' class='btn btn-info' type='submit' name='' value='download'>Download</a></td><td><a href='dosomethingelse.php' class='btn btn-info' type='submit' name='' value=''>View</a></td><td></td></tr>";
 				}
 			else
 				{
