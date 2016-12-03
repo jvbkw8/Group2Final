@@ -118,7 +118,7 @@ tr:nth-child(even) {
 		}
 	else
 		{
-		$query = "select files.*, manifest.name as manifestname from files inner join manifest on manifest.id = files.mannifestid;";
+		$query = "select files.*, manifest.name as manifestname from files inner join manifest on manifest.id = files.manifestid;";
 		}
 
 	if ($result = mysqli_query($db_link, $query)){
