@@ -66,7 +66,7 @@ tr:nth-child(even) {
 <div class="container">
 		<div class="row">
 			<div class="col-md-3 col-sm-10 col-xs-10">
-				<div class="col-md-5">
+				<div class="col-md-9">
 				<form action="/Group2Final/search.php" method="post">				
 					  <label for="example-first-input" class=" col-form-label">By Filename:</label>			 
 					  <br>
