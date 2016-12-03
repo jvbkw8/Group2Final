@@ -25,7 +25,10 @@ include "security.php";
   <form action="doupload.php" method="post" enctype="multipart/form-data">
     <input type="file" id="file" name="files[]" multiple="multiple" />
     <br>
+    Manifest Name:
+    <br>
     <input type="text" id="" name="manifestname" />
+    <br>
     <br>
     <input type="submit" value="Upload!" />
   </form>
