@@ -133,10 +133,12 @@ tr:nth-child(even) {
 				<th>Manifest Name</th>
 				<th>Delete File?</th>
 			</tr>
+				</table> <!-- get rid of this end table !! -->
 		<?php
 		//data  
 		while ($row = mysqli_fetch_assoc($result))
 		{
+			echo print_r($row);continue;
 		     $manifestname = (isset($row['manifestname']))?$row['manifestname']:"";
 		     ?>
 			<tr>
