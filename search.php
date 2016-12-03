@@ -76,18 +76,12 @@ tr:nth-child(even) {
 					  <input type="submit" value="Search" class="btn btn-info">
 				</form>
 				<form action="/Group2Final/search.php" method="post">
-					<div class="form-group row">
 					  <label for="example-first-input" class="col-form-label">By Username:</label>
-					  <div class="col-xs-4">
 					  <br>						  
 					  <input class="form-control" type="text" placeholder="" name="searchowner">
 					  <br>
-					  </div>
-					</div>
-					<br>
-					<div class="row form-group">
+					  <br>
 					  <input type="submit" value="Search" class="btn btn-info">
-					</div>
 				</form>
 			</div>
 			<div class="col-md-6 col-sm-10 col-xs-10">
