@@ -31,8 +31,13 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 	$stmt->execute();
 	
 	
-	// Loop $_FILES to exeicute all files
-	foreach ($_FILES['files']['name'] as $f => $name) {     
+	// for each file
+	foreach ($_FILES['files']['name'] as $f => $name) {
+		
+	echo $name;
+	echo "<br>";
+	continue;
+		
 	    if ($_FILES['files']['error'][$f] == 4) {
 	        continue; // Skip file if any error found
 	    }	       
