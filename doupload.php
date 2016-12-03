@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 }
 
 
-$max_file_size = 1024*1000; //1mb?
+$max_file_size = 1024*10000; //1mb?
 
 if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 	// Loop $_FILES to exeicute all files
