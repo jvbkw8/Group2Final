@@ -70,7 +70,7 @@ tr:nth-child(even) {
 				<form action="/Group2Final/search.php" method="post">				
 					  <label for="example-first-input" class=" col-form-label">By Filename:</label>			 
 					  <br>
-					  <input style="width:120px" class="form-control" type="text" placeholder="" name="searchname" value="<?php if(isset($_POST['searchname'])){echo $_POST['searchname'];}?>">
+					  <input class="form-control" type="text" placeholder="" name="searchname" value="<?php if(isset($_POST['searchname'])){echo $_POST['searchname'];}?>">
 					  <br>
 					  
 					  <input type="submit" value="Search" class="btn btn-info">
@@ -82,7 +82,7 @@ tr:nth-child(even) {
 				<form action="/Group2Final/search.php" method="post">
 					  <label for="example-first-input" class="col-form-label">By Username:</label>
 					  <br>						  
-					  <input style="width:120px" class="form-control" type="text" placeholder="" name="searchowner" value="<?php if(isset($_POST['searchowner'])){echo $_POST['searchowner'];}?>">
+					  <input class="form-control" type="text" placeholder="" name="searchowner" value="<?php if(isset($_POST['searchowner'])){echo $_POST['searchowner'];}?>">
 					  <br>
 					  
 					  <input type="submit" value="Search" class="btn btn-info">
@@ -92,7 +92,7 @@ tr:nth-child(even) {
 				<form action="/Group2Final/search.php" method="post">
 					  <label for="example-first-input" class="col-form-label">By Manifest:</label>
 					  <br>						  
-					  <input style="width:120px" class="form-control" type="text" placeholder="" name="searchmanifest" value="<?php if(isset($_POST['searchmanifest'])){echo $_POST['searchmanifest'];}?>">
+					  <input class="form-control" type="text" placeholder="" name="searchmanifest" value="<?php if(isset($_POST['searchmanifest'])){echo $_POST['searchmanifest'];}?>">
 					  <br>
 					  
 					  <input type="submit" value="Search" class="btn btn-info">
