@@ -131,6 +131,7 @@ tr:nth-child(even) {
 		echo "<th>Get File</th>";
 		echo "<th>View Manifest</th>";
 		echo "<th>Manifest Name</th>";
+		echo "<th>Delete File?</th>";
 		echo "</tr>";
 
 		//data  
@@ -140,7 +141,7 @@ tr:nth-child(even) {
 		     ?>
 			<tr>
 				<td><?php echo $row["name"];?></td>
-				<td></td>
+				<td><?php echo $_SESSION['NAME'];?></td>
 				<td><a href='download.php?id=<?php echo $row["id"];?>' class='btn btn-info' type='submit' name='' value='download'>Download</a></td>
 				<td><form action='search.php' method='post'><button name='manifestname' class='btn btn-info' type='submit' value='<?php echo $row['manifestname'];?>'>View This Manifest</button></form></td>
 				<td><?php echo $manifestname;?></td>
@@ -151,7 +152,7 @@ tr:nth-child(even) {
 					<?php
 				} else {
 					?>
-					<td><?php echo $_SESSION['NAME'];?></td>
+					<td></td>
 					<?php
 				}
 			echo "</tr>";
