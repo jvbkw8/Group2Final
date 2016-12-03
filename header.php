@@ -34,7 +34,6 @@ switch($_SERVER['PHP_SELF']){
       echo "Welcome ".$admin.$_SESSION['NAME']."!";
     }
     ?></span></h2>
-  <br>
   <ul class="nav nav-pills nav-justified" style="position:relative; margin-top:-2em;width:800px; margin-left:auto; margin-right:auto">
     <li class="<?=$index_active?>"><a href="index.php">Home</a></li>
     <li class="<?=$upload_active?>"><a href="upload.php">Upload</a></li>
