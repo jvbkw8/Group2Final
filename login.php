@@ -39,7 +39,6 @@ session_destroy();
 				</div>
 				<div class="row form-group">
 						<input class=" btn btn-info" type="submit" name="submit" value="Login"/>
-						<a class="btn btn-info" href="signup.php">Sign Up</a>
 				</div>
 			</form>
 		</div>
