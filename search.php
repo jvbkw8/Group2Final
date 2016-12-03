@@ -142,7 +142,7 @@ tr:nth-child(even) {
 		     ?>
 			<tr>
 				<td><?php echo $row["name"];?></td>
-				<td><?php echo $_SESSION['NAME'];?></td>
+				<td><?php echo $row['owner'];?></td>
 				<td><a href='download.php?id=<?php echo $row["id"];?>' class='btn btn-info'>Download</a></td>
 				<td><form action='search.php' method='post'><button type="submit" name='searchmanifest' class='btn btn-info' value='<?php echo $row['manifestname'];?>'>View Files From This Manifest</button></form></td>
 				<td><?php echo $manifestname;?></td>
