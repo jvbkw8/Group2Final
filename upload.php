@@ -22,17 +22,38 @@ include "security.php";
 <br>
 <br>
 <div class="container">
-  <form action="doupload.php" method="post" enctype="multipart/form-data">
+  <form action="doupload.php" method="post" enctype="multipart/form-data" onsubmit="return checkForm(this)";>
     <input type="file" id="file" name="files[]" multiple="multiple" />
     <br>
     Manifest Name:
     <br>
-    <input type="text" id="" name="manifestname" />
+    <input type="text" id="inputfield" name="manifestname" />
     <br>
     <br>
     <input class="btn btn-info" type="submit" value="Upload" />
   </form>
 </div>
 
+	
+<script type="text/javascript">
+  function checkForm(form)
+  {
+    // validation fails if the input is blank
+    if(form.inputfield.value == "")
+    	{
+	alert("Error: Input is empty!");
+	form.inputfield.focus();
+	return false;
+    }
+  else
+  	{
+	// validation was successful
+	return true;
+	}
+  }
+
+</script>
+	
+	
 </body>
 </html>
