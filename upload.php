@@ -20,6 +20,10 @@ include "security.php";
 ?>
 <br>
 <br>
+	<div class="alert alert-success">
+  <strong>Success!</strong> Indicates a successful or positive action.
+</div>
+	
 <br>
 <div class="container">
   <form action="doupload.php" method="post" enctype="multipart/form-data" onsubmit="return checkForm(this)";>
