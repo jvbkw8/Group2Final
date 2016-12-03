@@ -122,18 +122,18 @@ tr:nth-child(even) {
 		}
 
 	if ($result = mysqli_query($db_link, $query)){
-		echo "<table>";
-		//header
-		echo "<tr>";
-		echo "<th>File Name</th>";
-		//echo "<th>File ID</th>";
-		echo "<th>Owner</th>";
-		echo "<th>Get File</th>";
-		echo "<th>View Manifest</th>";
-		echo "<th>Manifest Name</th>";
-		echo "<th>Delete File?</th>";
-		echo "</tr>";
-
+		?>
+		<table>
+			<tr>
+				<th>File Name</th>
+				<th>File ID</th>
+				<th>Owner</th>
+				<th>Get File</th>
+				<th>View Manifest</th>
+				<th>Manifest Name</th>
+				<th>Delete File?</th>
+			</tr>
+		<?php
 		//data  
 		while ($row = mysqli_fetch_assoc($result))
 		{
@@ -142,8 +142,8 @@ tr:nth-child(even) {
 			<tr>
 				<td><?php echo $row["name"];?></td>
 				<td><?php echo $_SESSION['NAME'];?></td>
-				<td><a href='download.php?id=<?php echo $row["id"];?>' class='btn btn-info' type='submit' name='' value='download'>Download</a></td>
-				<td><form action='search.php' method='post'><button name='manifestname' class='btn btn-info' type='submit' value='<?php echo $row['manifestname'];?>'>View This Manifest</button></form></td>
+				<td><a href='download.php?id=<?php echo $row["id"];?>' class='btn btn-info'>Download</a></td>
+				<td><form action='search.php' method='post'><button type="submit" name='searchmanifest' class='btn btn-info' value='<?php echo $row['manifestname'];?>'>View This Manifest</button></form></td>
 				<td><?php echo $manifestname;?></td>
 				<?php
 				if($row["owner"] == $_SESSION['NAME'] || (isset($_SESSION['ADMIN']) && $_SESSION['ADMIN'] == 1)){
@@ -155,23 +155,19 @@ tr:nth-child(even) {
 					<td></td>
 					<?php
 				}
-			echo "</tr>";
+			?>
+			</tr>
+			<?php
 		    }
-
-		    echo "</table>";
-
+		?>
+		</table>
+		<?php
 		    mysqli_free_result($result);
 		    mysqli_close($db_link);
 	}
 	?>
-
-
-			</div>
 		</div>
-
-
-
-
+	</div>
 </div>
 		
 
