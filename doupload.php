@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 }
 
 
-$max_file_size = 1024*100; //100 kb
+$max_file_size = 1024*1000; //1mb?
 
 if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 	// Loop $_FILES to exeicute all files
@@ -31,7 +31,7 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 	        }
 
 	        else{ // No error found
-
+			//for each file do these things
 			$binaryData = file_get_contents($_FILES['files']['tmp_name'][$f]);
 			$owner = $_SESSION['NAME'];
 			$null = NULL;
