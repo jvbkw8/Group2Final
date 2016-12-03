@@ -20,7 +20,7 @@ if(isset($_POST['deleteid']))
 	while($row = mysqli_fetch_assoc($result)){
 		if($row['numFiles'] == 0){
 			$query = "DELETE from manifest where id = $row['id'];";
-			$result = mysqli_query($db_link, $query);
+			mysqli_query($db_link, $query);
 		}
 	}
 
