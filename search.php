@@ -70,9 +70,9 @@ tr:nth-child(even) {
 				<form action="/Group2Final/search.php" method="post">				
 					  <label for="example-first-input" class=" col-form-label">By Filename:</label>			 
 					  <br>
-					  <input class="form-control" type="text" placeholder="" name="searchname" value="<?php if(isset($_POST['searchname'])){echo $_POST['searchname'];}?>">
+					  <input style="width:120px" class="form-control" type="text" placeholder="" name="searchname" value="<?php if(isset($_POST['searchname'])){echo $_POST['searchname'];}?>">
 					  <br>
-					  <br>
+					  
 					  <input type="submit" value="Search" class="btn btn-info">
 				</form>
 
@@ -82,9 +82,9 @@ tr:nth-child(even) {
 				<form action="/Group2Final/search.php" method="post">
 					  <label for="example-first-input" class="col-form-label">By Username:</label>
 					  <br>						  
-					  <input class="form-control" type="text" placeholder="" name="searchowner" value="<?php if(isset($_POST['searchowner'])){echo $_POST['searchowner'];}?>">
+					  <input style="width:120px" class="form-control" type="text" placeholder="" name="searchowner" value="<?php if(isset($_POST['searchowner'])){echo $_POST['searchowner'];}?>">
 					  <br>
-					  <br>
+					  
 					  <input type="submit" value="Search" class="btn btn-info">
 				</form>
 				<br>
@@ -92,9 +92,9 @@ tr:nth-child(even) {
 				<form action="/Group2Final/search.php" method="post">
 					  <label for="example-first-input" class="col-form-label">By Manifest:</label>
 					  <br>						  
-					  <input class="form-control" type="text" placeholder="" name="searchmanifest" value="<?php if(isset($_POST['searchmanifest'])){echo $_POST['searchmanifest'];}?>">
+					  <input style="width:120px" class="form-control" type="text" placeholder="" name="searchmanifest" value="<?php if(isset($_POST['searchmanifest'])){echo $_POST['searchmanifest'];}?>">
 					  <br>
-					  <br>
+					  
 					  <input type="submit" value="Search" class="btn btn-info">
 				</form>
 				</div>
@@ -123,7 +123,7 @@ tr:nth-child(even) {
 
 	if ($result = mysqli_query($db_link, $query)){
 		?>
-		<table>
+		<table style="width:100%">
 			<tr>
 				<th>File Name</th>
 				<th>Owner</th>
