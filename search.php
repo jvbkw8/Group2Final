@@ -138,14 +138,24 @@ tr:nth-child(even) {
                      while ($row = mysqli_fetch_assoc($result))
 			{
 			     $manifestname = (isset($row['manifestname']))?$row['manifestname']:"";
+			     ?>
+				<tr>
+					<td><?php echo {$row["name"]};?></td>
+					<td></td>
+					<td><a href='download.php?id=<?php echo {$row["id"]};?>' class='btn btn-info' type='submit' name='' value='download'>Download</a></td>
+					<td><form action='search.php' method='post'><button name='manifestname' class='btn btn-info' type='submit' value='<?php echo $row['manifestname'];?>'>View This Manifest</button></td>
+					<td><?php echo $manifestname;?></td>
+					<?php
+			     		if($row["owner"] == $_SESSION['NAME'] || (isset($_SESSION['ADMIN']) && $_SESSION['ADMIN'] == 1)){
+						?>
+						<td><form action='search.php' method='post'><button type='submit' name='deleteid' value="<?php echo {$row["id"]};?>" class='btn btn-info'>Delete</button></form></td>
+						<?php
+					} else {
+						?>
+						<td><?php echo $_SESSION['NAME'];?></td>
+						<?php
+					}
 			if ($row["owner"] == $_SESSION['NAME'])
-				{
-				echo "<tr><td>{$row["name"]}</td><td><form action='search.php' method='post'><button type='submit' name='deleteid' value={$row["id"]} class='btn btn-info'>Delete</button></form></td><td><a href='download.php?id={$row["id"]}' class='btn btn-info' type='submit' name='' value='download'>Download</a></td><td><a href='dosomethingelse.php' class='btn btn-info' type='submit' name='' value=''>View</a></td><td>$manifestname</td></tr>";
-				}
-			else
-				{
-				echo "<tr><td>{$row["name"]}</td><td>{$row["owner"]}</td><td><a href='download.php?id={$row["id"]}' class='btn btn-info' type='submit' name='' value='download'>Download</a></td><td><a href='dosomethingelse.php' class='btn btn-info' type='submit' name='' value=''>View</a></td><td>$manifestname</td></tr>";
-				}
 
                     	} 
 
