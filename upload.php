@@ -30,7 +30,7 @@ include "security.php";
     <input type="text" id="" name="manifestname" />
     <br>
     <br>
-    <input type="submit" value="Upload!" />
+    <input button="button-info" type="submit" value="Upload!" />
   </form>
 </div>
 
