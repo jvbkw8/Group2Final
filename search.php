@@ -71,6 +71,7 @@ tr:nth-child(even) {
 					<div class="form-group row">
 					  <label for="example-first-input" class=" col-form-label">By filename:</label>
 					  <div class="col-xs-4">
+					  <br>
 					  <input class="form-control" type="text" placeholder="" name="searchname">
 					  <br>
 					  </div>
@@ -84,6 +85,7 @@ tr:nth-child(even) {
 					<div class="form-group row">
 					  <label for="example-first-input" class="col-form-label">By Username:</label>
 					  <div class="col-xs-4">
+					  <br>						  
 					  <input class="form-control" type="text" placeholder="" name="searchowner">
 					  <br>
 					  </div>
