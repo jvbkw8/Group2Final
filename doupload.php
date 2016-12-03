@@ -20,7 +20,7 @@ $max_file_size = 1024000*10000; //1mb?
 
 
 $numFilesNotUploaded = 0;
-$numFilesUploaded;
+$numFilesUploaded = 0;
 $error = array();
 if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 	
@@ -84,6 +84,9 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 } else {
 	$error[] = "No files uploaded.";
 }
+if($numFilesUploaded == 0){
+	$error[] = "No files uploaded";
+}
 if($numFilesNotUploaded > 0){
 	$plural = ($numFilesNotUploaded > 1)? "s":"";
 	$error[] = $numFilesNotUploaded." file".$plural." not uploaded.";
@@ -99,7 +102,7 @@ $stmt->close();
 $conn->close();
 if(isset($errorMsg)){
 	header( 'Location: /Group2Final/upload.php?error='.$errorMsg ) ;
-}else{
+}else if{
 	header('Location: /Group2Final/upload.php?success='.$numFilesUploaded);
 }
 ?>
