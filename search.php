@@ -126,7 +126,6 @@ tr:nth-child(even) {
 		<table>
 			<tr>
 				<th>File Name</th>
-				<th>File ID</th>
 				<th>Owner</th>
 				<th>Get File</th>
 				<th>View Manifest</th>
