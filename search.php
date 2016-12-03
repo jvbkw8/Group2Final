@@ -139,7 +139,7 @@ tr:nth-child(even) {
 			{
 			if ($row["owner"] == $_SESSION['NAME'])
 				{
-				echo "<tr><td>{$row["name"]}</td><td><form action='search.php' method='post'><button type='submit' name='deleteid' value={$row["id"]} class='btn btn-info'>Delete</button></form></td><td><a href='download.php?id={$row["id"]}' class='btn btn-info' type='submit' name='' value='download'>Download</a></td><td><a href='dosomethingelse.php' class='btn btn-info' type='submit' name='' value=''>View</a></td><td>(isset($row['manifestname']))?{$row['manifestname']}:""</td></tr>";
+				echo "<tr><td>{$row["name"]}</td><td><form action='search.php' method='post'><button type='submit' name='deleteid' value={$row["id"]} class='btn btn-info'>Delete</button></form></td><td><a href='download.php?id={$row["id"]}' class='btn btn-info' type='submit' name='' value='download'>Download</a></td><td><a href='dosomethingelse.php' class='btn btn-info' type='submit' name='' value=''>View</a></td><td>(isset({$row['manifestname']}))?{$row['manifestname']}:''</td></tr>";
 				}
 			else
 				{
