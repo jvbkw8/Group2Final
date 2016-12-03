@@ -20,9 +20,22 @@ include "security.php";
 ?>
 <br>
 <br>
-	<div class="alert alert-success">
-  <strong>Success!</strong> Indicates a successful or positive action.
-</div>
+<?php
+	if isset ($_GET["error"])
+	{
+	echo '<div class="alert alert-danger" id="alertbad">';
+	echo '<strong>Success!</strong> {$_GET["error"]}.':
+	echo '</div>';
+	else
+	{
+	echo '<div class="alert alert-success" id="alertgood">';
+	echo '<strong>Success!</strong> All files uploaded.';
+	echo '</div>';
+	}	
+		
+		
+?>
+	
 	
 <br>
 <div class="container">
@@ -45,13 +58,13 @@ include "security.php";
     // validation fails if the input is blank
     if(form.inputfield.value == "")
     	{
-	alert("Error: Input is empty!");
+	alert("No manifest name");
 	form.inputfield.focus();
 	return false;
     }
    if(form.file.value == "")
    	{
-	alert("Error: Input is empty!");
+	alert("No files selected");
 	form.inputfield.focus();
 	return false;   
    	}
