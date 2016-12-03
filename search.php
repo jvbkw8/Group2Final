@@ -113,7 +113,7 @@ tr:nth-child(even) {
     	//header
 	echo "<tr>";
 	echo "<th>File Name</th>";
-	echo "<th>File ID</th>";
+	//echo "<th>File ID</th>";
 	echo "<th>Owner</th>";
 	echo "<th>Get File</th>";
 	echo "<th>View Manifest</th>";
@@ -124,7 +124,7 @@ tr:nth-child(even) {
 			{
 			if ($row["owner"] == $_SESSION['NAME'])
 				{
-				echo "<tr><td>{$row["name"]}</td><td>{$row["id"]}</td><td><form action='search.php' method='post'><button type='submit' name='deleteid' value={$row["id"]} class='btn btn-info'>Delete</button></form></td><td><a href='download.php?id={$row["id"]}' class='btn btn-info' type='submit' name='' value='download'>Download</a></td><td><a href='dosomethingelse.php' class='btn btn-info' type='submit' name='' value=''>View</a></td></tr>";
+				echo "<tr><td>{$row["name"]}</td><td><form action='search.php' method='post'><button type='submit' name='deleteid' value={$row["id"]} class='btn btn-info'>Delete</button></form></td><td><a href='download.php?id={$row["id"]}' class='btn btn-info' type='submit' name='' value='download'>Download</a></td><td><a href='dosomethingelse.php' class='btn btn-info' type='submit' name='' value=''>View</a></td></tr>";
 				}
 			else
 				{
