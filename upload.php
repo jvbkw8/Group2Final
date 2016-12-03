@@ -45,6 +45,12 @@ include "security.php";
 	form.inputfield.focus();
 	return false;
     }
+   if(form.file[0].value == "")
+   	{
+	alert("Error: Input is empty!");
+	form.inputfield.focus();
+	return false;   
+   	}
   else
   	{
 	// validation was successful
