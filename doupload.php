@@ -71,8 +71,9 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 	    }
 	}
 } else {
-	$error = "No files uploaded.";
+	$error[] = "No files uploaded.";
 }
+$error[]="random extra error";
 if($numFilesNotUploaded > 0){
 	$plural = ($numFilesNotUploaded > 1)? "s":"";
 	$error[] = $numFilesNotUploaded." file".$plural." not uploaded.";
