@@ -65,21 +65,15 @@ tr:nth-child(even) {
 
 <div class="container">
 		<div class="row">
-			<div class="col-md-4 col-sm-10 col-xs-10">
+			<div class="col-md-6 col-sm-10 col-xs-10">
 				<h2></h2>
-				<form action="/Group2Final/search.php" method="post">
-					<div class="form-group row">
-					  <label for="example-first-input" class=" col-form-label">By filename:</label>
-					  <div class="col-xs-4">
+				<form action="/Group2Final/search.php" method="post">				
+					  <label for="example-first-input" class=" col-form-label">By filename:</label>			 
 					  <br>
 					  <input class="form-control" type="text" placeholder="" name="searchname">
 					  <br>
-					  </div>
-					</div>
-					<br>
-					<div class="row form-group">
+					  <br>
 					  <input type="submit" value="Search" class="btn btn-info">
-					</div>
 				</form>
 				<form action="/Group2Final/search.php" method="post">
 					<div class="form-group row">
@@ -96,7 +90,7 @@ tr:nth-child(even) {
 					</div>
 				</form>
 			</div>
-			<div class="col-md-8 col-sm-10 col-xs-10">
+			<div class="col-md-6 col-sm-10 col-xs-10">
 <?php
 //This block gets all the files and constructs a table.  more to come
 	$db_link = new mysqli('localhost', 'root', '', 'db');
