@@ -15,6 +15,14 @@ if(isset($_POST['deleteid']))
 	$db_link = new mysqli('localhost', 'root', '', 'db');
 	$query = "delete from files where id={$_POST["deleteid"]};" or die('Error, query failed');;
 	$result = mysqli_query($db_link, $query);
+	$query = "select count(files.id) as numFiles, manifest.id from manifest left join files on files.manifestid = manifest.id group by manifest.id;";
+	$result = mysqli_query($db_link, $query);
+	while($row = mysqli_fetch_assoc($result)){
+		if($row['numFiles'] == 0){
+			$query = "DELETE from manifest where id = $row['id'];";
+			$result = mysqli_query($db_link, $query);
+		}
+	}
 
 	mysqli_close($db_link);
 
