@@ -58,13 +58,13 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 			$null = NULL; //this made it all work
 			
 			// prepare and bind
-			//$stmt = $conn->prepare("INSERT INTO files (data, name, owner, manifestid) VALUES (?, ?, ?, ?)");
-			$stmt = $conn->prepare("INSERT into files (data, nam, owner, manifestid) VALUES(?, ?, ?, ?)");
+			$stmt = $conn->prepare("INSERT INTO files (data, name, owner, manifestid) VALUES (?, ?, ?, ?)");
 			$stmt->bind_param("bssi", $null,  $name, $owner, $manifestid);
 			$stmt->send_long_data(0, $binaryData);	//this made it all work	
 			if(!$stmt->execute()){
 				$numFilesNotUploaded++;
 			} else {
+				$numFilesNotUploaded++;
 				$numFilesUploaded++;
 			}
 	        }
