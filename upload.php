@@ -22,16 +22,17 @@ include "security.php";
 <br>
 <?php
 	if (isset ($_GET["error"]))
-	{
-	echo '<div class="alert alert-danger" id="alertbad">';
-	echo '<strong>Success!</strong> {$_GET["error"]}.';
-	echo '</div>';
+		{
+		echo '<div class="alert alert-danger" id="alertbad">';
+		echo '<strong>Success!</strong> {$_GET["error"]}.';
+		echo '</div>';
+		}
 	else
-	{
-	echo '<div class="alert alert-success" id="alertgood">';
-	echo '<strong>Success!</strong> All files uploaded.';
-	echo '</div>';
-	}	
+		{
+		echo '<div class="alert alert-success" id="alertgood">';
+		echo '<strong>Success!</strong> All files uploaded.';
+		echo '</div>';
+		}	
 		
 		
 ?>
