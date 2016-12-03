@@ -21,7 +21,7 @@ include "security.php";
 <br>
 <br>
 <?php
-	if isset ($_GET["error"])
+	if (isset ($_GET["error"]))
 	{
 	echo '<div class="alert alert-danger" id="alertbad">';
 	echo '<strong>Success!</strong> {$_GET["error"]}.':
