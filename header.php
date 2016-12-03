@@ -42,8 +42,14 @@ switch($_SERVER['PHP_SELF']){
     ?></span></h2>
   <ul class="nav nav-pills nav-justified" style="position:relative; margin-top:-5em;width:800px; margin-left:auto; margin-right:auto">
     <li class="<?=$index_active?>"><a href="index.php">Home</a></li>
-    <li class="<?=$upload_active?>"><a href="upload.php">Upload</a></li>
-    <li class="<?=$search_active?>"><a href="search.php">Search Manifests</a></li>
+      <?php
+        if(isset($_SESSION['NAME'])){
+            ?>
+            <li class="<?=$upload_active?>"><a href="upload.php">Upload</a></li>
+            <li class="<?=$search_active?>"><a href="search.php">Search Manifests</a></li>
+            <?php
+        }
+        ?>
     <?php
        if(isset($_SESSION['ADMIN']) and $_SESSION['ADMIN'] == 1){
           ?>
