@@ -19,8 +19,14 @@ switch($_SERVER['PHP_SELF']){
       $account_active = "active";
       break;
   case "/Group2Final/logout.php":
-      $logout = "active";
+      $logout_active = "active";
       break;
+    case "/Group2Final/login.php":
+        $login_active = "active";
+        break;
+    case "/Group2Final/signup.php":
+        $signup_active = "active";
+        break;
 }
 ?>
 <div style="width:100%; height:100%; overflow-y:none">
@@ -44,8 +50,17 @@ switch($_SERVER['PHP_SELF']){
           <li class="<?=$account_active?>"><a href="account.php">Account Manager</a></li>
         <?php
        }
+        if(isset($_SESSION['NAME'])){
        ?>
-    <li class="<?=$logout_active?>"><a href="logout.php">Logout</a></li>
+        <li class="<?=$logout_active?>"><a href="logout.php">Logout</a></li>
+       <?php
+        } else {
+         ?>
+          <li class="<?=$login_active?>"><a href="login.php">Login</a></li>
+          <li class="<?=$signup_active?>"><a href="signup.php">Sign Up</a></li>
+          <?php
+        }
+        ?>
   </ul>
 </div>
 <div class="container" style="margin-top:150px; width:100%">
