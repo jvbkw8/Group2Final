@@ -18,7 +18,19 @@ if ($conn->connect_error) {
 
 $max_file_size = 1024*10000; //1mb?
 
+
+
 if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
+	
+	//set manifest name for all
+	$manifestname = $_POST["manifestname"];
+	
+	//insert manifest name and get its id
+	$stmt = $conn->prepare("INSERT INTO manifest(name) VALUES (?)");
+	$stmt->bind_param("s", $manifestname);	
+	$stmt->execute();
+	
+	
 	// Loop $_FILES to exeicute all files
 	foreach ($_FILES['files']['name'] as $f => $name) {     
 	    if ($_FILES['files']['error'][$f] == 4) {
@@ -36,10 +48,7 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 			$owner = $_SESSION['NAME'];
 			$null = NULL;
 			
-			//insert manifest name and get its id
-			$stmt = $conn->prepare("INSERT INTO manifest(name) VALUES (?)");
-			$stmt->bind_param("s", $name);	
-			$stmt->execute();
+
 			
 			$manifestid = mysqli_insert_id($conn);
 			
