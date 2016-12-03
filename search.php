@@ -122,47 +122,47 @@ tr:nth-child(even) {
 		}
 
 	if ($result = mysqli_query($db_link, $query)){
-
-	echo "<table>";
-    	//header
-	echo "<tr>";
-	echo "<th>File Name</th>";
-	//echo "<th>File ID</th>";
-	echo "<th>Owner</th>";
-	echo "<th>Get File</th>";
-	echo "<th>View Manifest</th>";
-	echo "<th>Manifest Name</th>";
-	echo "</tr>";
-
-	//data  
-	while ($row = mysqli_fetch_assoc($result))
-	{
-	     $manifestname = (isset($row['manifestname']))?$row['manifestname']:"";
-	     ?>
-		<tr>
-			<td><?php echo $row["name"];?></td>
-			<td></td>
-			<td><a href='download.php?id=<?php echo $row["id"];?>' class='btn btn-info' type='submit' name='' value='download'>Download</a></td>
-			<td><form action='search.php' method='post'><button name='manifestname' class='btn btn-info' type='submit' value='<?php echo $row['manifestname'];?>'>View This Manifest</button></form></td>
-			<td><?php echo $manifestname;?></td>
-			<?php
-			if($row["owner"] == $_SESSION['NAME'] || (isset($_SESSION['ADMIN']) && $_SESSION['ADMIN'] == 1)){
-				?>
-				<td><form action='search.php' method='post'><button type='submit' name='deleteid' value="<?php echo $row["id"];?>" class='btn btn-info'>Delete</button></form></td>
-				<?php
-			} else {
-				?>
-				<td><?php echo $_SESSION['NAME'];?></td>
-				<?php
-			}
+		echo "<table>";
+		//header
+		echo "<tr>";
+		echo "<th>File Name</th>";
+		//echo "<th>File ID</th>";
+		echo "<th>Owner</th>";
+		echo "<th>Get File</th>";
+		echo "<th>View Manifest</th>";
+		echo "<th>Manifest Name</th>";
 		echo "</tr>";
-            }
-	
-	    echo "</table>";
 
-            mysqli_free_result($result);
-            mysqli_close($db_link);
-?>
+		//data  
+		while ($row = mysqli_fetch_assoc($result))
+		{
+		     $manifestname = (isset($row['manifestname']))?$row['manifestname']:"";
+		     ?>
+			<tr>
+				<td><?php echo $row["name"];?></td>
+				<td></td>
+				<td><a href='download.php?id=<?php echo $row["id"];?>' class='btn btn-info' type='submit' name='' value='download'>Download</a></td>
+				<td><form action='search.php' method='post'><button name='manifestname' class='btn btn-info' type='submit' value='<?php echo $row['manifestname'];?>'>View This Manifest</button></form></td>
+				<td><?php echo $manifestname;?></td>
+				<?php
+				if($row["owner"] == $_SESSION['NAME'] || (isset($_SESSION['ADMIN']) && $_SESSION['ADMIN'] == 1)){
+					?>
+					<td><form action='search.php' method='post'><button type='submit' name='deleteid' value="<?php echo $row["id"];?>" class='btn btn-info'>Delete</button></form></td>
+					<?php
+				} else {
+					?>
+					<td><?php echo $_SESSION['NAME'];?></td>
+					<?php
+				}
+			echo "</tr>";
+		    }
+
+		    echo "</table>";
+
+		    mysqli_free_result($result);
+		    mysqli_close($db_link);
+	}
+	?>
 
 
 			</div>
