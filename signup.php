@@ -16,29 +16,32 @@ session_destroy();
     <meta name="author" content="">
     <link rel="shortcut icon" href="favicon.ico">
 
-    <title>RADs Login</title>
+    <title>RADs Signup</title>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
   </head>
 
   <body>
-<?php
-	include "header.php";	  
-?>
+	  <?php
+	  include "header.php";
+	  ?>
 	<div class="row">
 		<div class="col-md-4 col-sm-4 col-xs-3"></div>
 		<div class="col-md-4 col-sm-4 col-xs-6">
-			<h2>Login</h2>
-			<form action="loginVerify.php" method="POST">
+			<h2>Sign Up</h2>
+			<form action="signupVerify.php" method="POST">
 				<div class="row form-group">
 						<input id="user" class='form-control' type="text" name="username" placeholder="username">
 				</div>
 				<div class="row form-group">
 						<input id="password" class='form-control' type="password" name="userpassword" placeholder="password">
 				</div>
+        <div class="row form-group">
+          <input id="password-confirm" class="form-control" type="password" name="password_confirm" placeholder="confirm password">
+          </div>
 				<div class="row form-group">
-						<input class=" btn btn-info" type="submit" name="submit" value="Login"/>
+						<input class=" btn btn-info" type="submit" name="submit" value="Sign Up"/>
 				</div>
 			</form>
 		</div>
