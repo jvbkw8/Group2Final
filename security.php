@@ -10,6 +10,9 @@ if(!isset($_SESSION['NAME'])){
   $r = mysqli_query($conn, $query);
   if($r->num_rows != 1){
      $requireLogin = true;
+  } else {
+    $row = mysql_fetch_assoc($r);
+    $_SESSION['ADMIN'] = $row['isadmin'];
   }
   
 }
