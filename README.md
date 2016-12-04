@@ -14,7 +14,7 @@ http://138.197.129.215/Group2Final/login.php
 ### Operating System
 
 
-   FreeBSD was chosen for its reliability, security, and predictability in updates and releases.  It is a proven solution as shown by its use by companies such as Netflix and Yahoo, incidentally accounting for more than a third of all internet traffic in 2015 in north america. (www.applieinsider.com) 
+   FreeBSD was chosen for its reliability, security, and predictability in updates and releases.  It is a proven solution as shown by its use by companies such as Netflix and Yahoo, incidentally accounting for more than a third of all internet traffic in 2015 in north america. 
 
 ### Database and Webserver
 
