@@ -1,5 +1,8 @@
 <?php
 include "security.php";
+if(!isset($_SESSION['ADMIN']) || $_SESSION['ADMIN'] == 0){
+	header("Location: /Group2Final/");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
