@@ -6,9 +6,9 @@ if(!isset($_SESSION['NAME'])){
 } else {
   include "connection.php";
   $conn = new mysqli($servername, $username, $password, $dbname);
-  $query = "SELECT * from user where username = ".$_SESSION['NAME']." and activeuserflag = 1";
+  $query = "SELECT * from user where username = '".$_SESSION['NAME']."' and activeuserflag = 1";
   $r = mysqli_query($conn, $query);
-  if(!$r->num_rows){
+  if($r->num_rows != 1){
      $requireLogin = true;
   }
   
